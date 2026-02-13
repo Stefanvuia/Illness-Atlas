@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Illness Atlas</title>
+  <link rel="stylesheet" href="css/styles.css">
+  <script src="https://d3js.org/d3.v7.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/d3-cloud@1.2.7/build/d3.layout.cloud.min.js"></script>
+</head>
+<body>
+  <!-- HEADER -->
+  <header id="hero">
+    <h1>Illness Atlas</h1>
+    <p class="subtitle">Explore the connections between symptoms, diseases, and body systems</p>
+    <p class="intro">
+      Select symptoms you're curious about and watch how diseases cluster by relevance.
+      Click any disease to dive deeper into which body systems it affects and read a medical overview.
+    </p>
+  </header>
+
+  <!-- SECTION 1: Bubble Cloud -->
+  <section id="explore" class="section">
+    <h2>Explore by Symptoms</h2>
+    <p class="section-desc">Select symptoms below to filter and resize disease bubbles. Larger bubbles indicate stronger symptom correlation.</p>
+    <div class="explore-layout">
+      <div id="symptom-panel">
+        <input type="text" id="symptom-search" placeholder="Search symptoms...">
+        <div id="symptom-list"></div>
+        <div id="selected-symptoms"></div>
+      </div>
+      <div id="bubble-container">
+        <svg id="bubble-svg"></svg>
+        <div id="bubble-tooltip" class="tooltip"></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- SECTION 2: Body System Explorer -->
+  <section id="body-explorer" class="section hidden">
+    <h2>Body Systems Affected</h2>
+    <p class="section-desc">Navigate through body systems to see which areas are impacted by <span id="explorer-disease-name" class="disease-highlight"></span>.</p>
+    <div class="explorer-layout">
+      <button id="prev-system" class="nav-btn">&larr;</button>
+      <div id="explorer-viewport">
+        <div id="system-label"></div>
+        <div id="explorer-canvas">
+          <img id="system-image" src="" alt="">
+          <svg id="explorer-svg"></svg>
+        </div>
+        <div id="symptom-annotations"></div>
+      </div>
+      <button id="next-system" class="nav-btn">&rarr;</button>
+    </div>
+    <div id="system-dots"></div>
+  </section>
+
+  <!-- SECTION 3: Disease Infographic -->
+  <section id="infographic" class="section hidden">
+    <h2>Disease Profile</h2>
+    <div class="info-layout">
+      <div id="disease-info">
+        <h3 id="info-disease-name"></h3>
+        <p id="info-description"></p>
+        <a id="info-link" href="#" target="_blank">Read more on Wikipedia &rarr;</a>
+      </div>
+      <div id="wordcloud-container">
+        <h3>Symptom Signature</h3>
+        <svg id="wordcloud-svg"></svg>
+      </div>
+    </div>
+  </section>
+
+  <footer>
+    <p>CSC316 Final Project &mdash; Illness Atlas</p>
+  </footer>
+
+  <script src="js/data.js"></script>
+  <script src="js/bubbleCloud.js"></script>
+  <script src="js/bodyExplorer.js"></script>
+  <script src="js/infographic.js"></script>
+</body>
+</html>
