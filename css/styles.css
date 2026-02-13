@@ -350,6 +350,34 @@ body {
   height: 350px;
 }
 
+/* ===== PLACEHOLDER CARDS ===== */
+.info-extras {
+  display: flex;
+  gap: 20px;
+  margin-top: 24px;
+}
+
+.placeholder-card {
+  flex: 1;
+  background: var(--surface);
+  border: 1px dashed var(--border);
+  border-radius: var(--radius);
+  padding: 24px;
+  text-align: center;
+}
+
+.placeholder-card h4 {
+  font-size: 1rem;
+  color: var(--text-muted);
+  margin-bottom: 8px;
+}
+
+.placeholder-text {
+  color: var(--border);
+  font-size: 0.85rem;
+  font-style: italic;
+}
+
 /* ===== FOOTER ===== */
 footer {
   text-align: center;
@@ -368,7 +396,7 @@ footer {
 
 /* ===== RESPONSIVE ===== */
 @media (max-width: 768px) {
-  .explore-layout, .info-layout { flex-direction: column; }
+  .explore-layout, .info-layout, .info-extras { flex-direction: column; }
   #symptom-panel { width: 100%; position: static; }
   .explorer-layout { flex-direction: column; }
 }
