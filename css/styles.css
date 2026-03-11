@@ -86,7 +86,7 @@ body {
   align-items: flex-start;
 }
 
-#symptom-panel {
+.symptom-panel {
   width: 280px;
   flex-shrink: 0;
   background: var(--surface);
@@ -97,7 +97,7 @@ body {
   top: 20px;
 }
 
-#symptom-search {
+.symptom-search {
   width: 100%;
   padding: 10px 12px;
   border: 1px solid var(--border);
@@ -108,17 +108,63 @@ body {
   outline: none;
 }
 
-#symptom-search:focus {
+.symptom-search:focus {
   border-color: var(--accent);
 }
 
-#symptom-list {
+.vis-tabs {
+  display: flex;
+  gap: 0;
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  overflow: hidden;
+  width: fit-content;
+  margin-bottom: 20px;
+}
+
+.vis-tab {
+  padding: 8px 28px;
+  font-size: 0.85rem;
+  font-weight: 600;
+  background: transparent;
+  color: var(--text-muted);
+  border: none;
+  cursor: pointer;
+  transition: background 0.15s, color 0.15s;
+}
+
+.vis-tab:hover {
+  background: rgba(88, 166, 255, 0.08);
+  color: var(--text);
+}
+
+.vis-tab.active {
+  background: var(--accent);
+  color: #fff;
+}
+
+.vis-panel {
+  display: none;
+}
+
+.vis-panel.active {
+  display: block;
+}
+
+.panel-desc {
+  color: var(--text-muted);
+  font-size: 0.88rem;
+  margin-bottom: 16px;
+  line-height: 1.6;
+}
+
+.symptom-list {
   max-height: 400px;
   overflow-y: auto;
   margin-top: 12px;
 }
 
-#symptom-list label {
+.symptom-list label {
   display: flex;
   align-items: center;
   gap: 8px;
@@ -130,16 +176,20 @@ body {
   transition: background 0.15s;
 }
 
-#symptom-list label:hover {
+.symptom-list label:hover {
   background: rgba(88, 166, 255, 0.08);
   color: var(--text);
 }
 
-#symptom-list input[type="checkbox"] {
+.symptom-list input[type="checkbox"] {
   accent-color: var(--accent);
 }
 
-#selected-symptoms {
+.symptom-list label.symptom-unavailable {
+  display: none !important;
+}
+
+.selected-symptoms {
   margin-top: 12px;
   display: flex;
   flex-wrap: wrap;
@@ -162,7 +212,7 @@ body {
   background: var(--danger);
 }
 
-#bubble-container {
+.bubble-container {
   flex: 1;
   position: relative;
   background: var(--surface);
@@ -172,9 +222,35 @@ body {
   min-height: 600px;
 }
 
-#bubble-svg {
+.bubble-svg {
   width: 100%;
   height: 600px;
+  cursor: grab;
+}
+
+.bubble-svg:active {
+  cursor: grabbing;
+}
+
+.zoom-reset-btn {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  padding: 4px 10px;
+  font-size: 0.75rem;
+  font-weight: 600;
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  color: var(--text-muted);
+  cursor: pointer;
+  z-index: 5;
+  transition: background 0.15s, color 0.15s;
+}
+
+.zoom-reset-btn:hover {
+  background: var(--accent-dim);
+  color: var(--text);
 }
 
 .tooltip {
@@ -397,6 +473,6 @@ footer {
 /* ===== RESPONSIVE ===== */
 @media (max-width: 768px) {
   .explore-layout, .info-layout, .info-extras { flex-direction: column; }
-  #symptom-panel { width: 100%; position: static; }
+  .symptom-panel { width: 100%; position: static; }
   .explorer-layout { flex-direction: column; }
 }

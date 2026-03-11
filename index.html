@@ -22,16 +22,40 @@
   <!-- SECTION 1: Bubble Cloud -->
   <section id="explore" class="section">
     <h2>Explore by Symptoms</h2>
-    <p class="section-desc">Select symptoms below to filter and resize disease bubbles. Larger bubbles indicate stronger symptom correlation.</p>
-    <div class="explore-layout">
-      <div id="symptom-panel">
-        <input type="text" id="symptom-search" placeholder="Search symptoms...">
-        <div id="symptom-list"></div>
-        <div id="selected-symptoms"></div>
+    <div class="vis-tabs">
+      <button class="vis-tab active" data-tab="exploratory">Exploratory</button>
+      <button class="vis-tab" data-tab="diagnostic">Diagnostic</button>
+    </div>
+
+    <!-- Exploratory panel: all symptoms always visible -->
+    <div class="vis-panel active" id="panel-exploratory">
+      <p class="panel-desc">Browse freely — select any combination of symptoms and watch diseases resize by relevance.</p>
+      <div class="explore-layout">
+        <div class="symptom-panel">
+          <input type="text" class="symptom-search" placeholder="Search symptoms...">
+          <div class="symptom-list"></div>
+          <div class="selected-symptoms"></div>
+        </div>
+        <div class="bubble-container">
+          <svg class="bubble-svg"></svg>
+          <div class="bubble-tooltip tooltip"></div>
+        </div>
       </div>
-      <div id="bubble-container">
-        <svg id="bubble-svg"></svg>
-        <div id="bubble-tooltip" class="tooltip"></div>
+    </div>
+
+    <!-- Diagnostic panel: symptom list narrows to only what remaining diseases have -->
+    <div class="vis-panel" id="panel-diagnostic">
+      <p class="panel-desc">Systematically narrow down diseases — after each selection only symptoms present in remaining candidates are shown.</p>
+      <div class="explore-layout">
+        <div class="symptom-panel">
+          <input type="text" class="symptom-search" placeholder="Search symptoms...">
+          <div class="symptom-list"></div>
+          <div class="selected-symptoms"></div>
+        </div>
+        <div class="bubble-container">
+          <svg class="bubble-svg"></svg>
+          <div class="bubble-tooltip tooltip"></div>
+        </div>
       </div>
     </div>
   </section>
