@@ -30,6 +30,7 @@ function initBubbleCloudPanel(panel, mode) {
   const searchInput = panel.querySelector('.symptom-search');
   const listEl = panel.querySelector('.symptom-list');
   const selectedEl = panel.querySelector('.selected-symptoms');
+  const resetBtn = panel.querySelector('.diagnostic-reset-btn');
 
   const width = container.clientWidth;
   const height = 600;
@@ -68,11 +69,17 @@ function initBubbleCloudPanel(panel, mode) {
     });
   });
 
+  let pulseTimer = null;
+
   function toggleSymptom(symptom, checked) {
     if (checked && !selectedSymptoms.includes(symptom)) {
       selectedSymptoms.push(symptom);
+      // Schedule pulse after simulation settles — only on addition
+      if (pulseTimer) clearTimeout(pulseTimer);
+      pulseTimer = setTimeout(pulseFullCoverageBubbles, 1200);
     } else if (!checked) {
       selectedSymptoms = selectedSymptoms.filter(s => s !== symptom);
+      if (pulseTimer) { clearTimeout(pulseTimer); pulseTimer = null; }
     }
     renderSelectedTags();
     updateBubbles();
@@ -80,8 +87,20 @@ function initBubbleCloudPanel(panel, mode) {
     fireSymptomChange();
   }
 
+  if (resetBtn) {
+    resetBtn.addEventListener('click', () => {
+      selectedSymptoms = [];
+      listEl.querySelectorAll('input[type="checkbox"]').forEach(cb => { cb.checked = false; });
+      renderSelectedTags();
+      updateBubbles();
+      AppState.selectedSymptoms = [];
+      fireSymptomChange();
+    });
+  }
+
   function renderSelectedTags() {
     selectedEl.innerHTML = '';
+    if (resetBtn) resetBtn.style.display = selectedSymptoms.length > 0 ? '' : 'none';
     selectedSymptoms.forEach(s => {
       const tag = document.createElement('span');
       tag.className = 'symptom-tag';
@@ -213,9 +232,9 @@ function initBubbleCloudPanel(panel, mode) {
     .alphaDecay(0.03)
     .on('tick', ticked);
 
-  const bubbles = bubbleGroup.selectAll('circle')
+  const bubbles = bubbleGroup.selectAll('circle.bubble')
     .data(nodes)
-    .join('circle')
+    .join(enter => enter.append('circle').attr('class', 'bubble'))
     .attr('r', d => d.r)
     .attr('fill', COLOR_DEFAULT)
     .attr('fill-opacity', 0.75)
@@ -517,12 +536,14 @@ function initBubbleCloudPanel(panel, mode) {
   }
 
   function refreshSymptomList(remainingDiseases) {
+    const exhaustedMsg = panel.querySelector('.symptom-exhausted-msg');
     if (!remainingDiseases || mode === 'exploratory') {
       listEl.querySelectorAll('label').forEach(label => {
         label.classList.remove('symptom-unavailable');
         const q = searchInput.value.toLowerCase();
         label.style.display = label.dataset.symptom.toLowerCase().includes(q) ? '' : 'none';
       });
+      if (exhaustedMsg) exhaustedMsg.style.display = 'none';
       return;
     }
     const remaining = new Set(remainingDiseases);
@@ -531,6 +552,13 @@ function initBubbleCloudPanel(panel, mode) {
       if (!remaining.has(row.disease)) return;
       symptomList.forEach(s => { if ((row[s] || 0) > 0) available.add(s); });
     });
+
+    // Check if all selectable symptoms are already selected (diseases indistinguishable)
+    const unselectedAvailable = [...available].filter(s => !selectedSymptoms.includes(s));
+    const exhausted = selectedSymptoms.length > 0 && unselectedAvailable.length === 0 && remainingDiseases.length > 1;
+    if (exhaustedMsg) exhaustedMsg.style.display = exhausted ? '' : 'none';
+    if (exhausted) pulseRemainingBubbles();
+
     const q = searchInput.value.toLowerCase();
     listEl.querySelectorAll('label').forEach(label => {
       const s = label.dataset.symptom;
@@ -545,6 +573,31 @@ function initBubbleCloudPanel(panel, mode) {
     });
   }
 
+  // Grow large → bounce back → small overshoot → settle — reads as a celebratory shake
+  function pulseBubble(el, r) {
+    el.interrupt()
+      .transition().duration(180).attr('r', r * 1.45)
+      .transition().duration(120).attr('r', r * 1.1)
+      .transition().duration(100).attr('r', r * 1.3)
+      .transition().duration(100).attr('r', r * 0.95)
+      .transition().duration(130).attr('r', r);
+  }
+
+  function pulseRemainingBubbles() {
+    bubbleGroup.selectAll('circle.bubble')
+      .filter(d => !d.filtered)
+      .each(function(d) { pulseBubble(d3.select(this), d.r); });
+  }
+
+  // Pulse bubbles where ALL of the disease's own symptoms are now selected
+  // (no remaining symptoms left to further narrow this disease)
+  function pulseFullCoverageBubbles() {
+    if (selectedSymptoms.length === 0) return;
+    bubbleGroup.selectAll('circle.bubble')
+      .filter(d => !d.filtered && d.matchedCount === diseaseSymptomCount[d.disease])
+      .each(function(d) { pulseBubble(d3.select(this), d.r); });
+  }
+
   function checkTerminal(survivors) {
     svg.selectAll('.terminal-msg').remove();
     if (survivors.length === 1) {
@@ -557,8 +610,6 @@ function initBubbleCloudPanel(panel, mode) {
         .text(`Best match: ${node.disease}`)
         .transition().duration(400).attr('opacity', 1);
       setTimeout(() => {
-        AppState.selectedDisease = node.disease;
-        fireDiseaseSelect();
         playRipple(node.x, node.y, node.r, COLOR_TOP);
         setTimeout(() => playRipple(node.x, node.y, node.r + 15, COLOR_HIGH), 200);
       }, 900);

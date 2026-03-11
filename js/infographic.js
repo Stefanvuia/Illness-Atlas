@@ -1,6 +1,35 @@
 // ============================================
-// infographic.js — Vis 3: Disease Infographic + Word Cloud
+// infographic.js — Vis 3: Disease Infographic + Word Cloud + Info Cards
 // ============================================
+
+// ── Lookup tables ─────────────────────────────────────────────────────────────
+const PREVALENCE_TIERS = [
+  { tier: 1, label: 'Extremely Rare', context: '< 1 in 100,000',  color: '#7e57c2' },
+  { tier: 2, label: 'Rare',           context: '1 in 10k–100k',   color: '#42a5f5' },
+  { tier: 3, label: 'Uncommon',       context: '1 in 1,000–10,000', color: '#26c6da' },
+  { tier: 4, label: 'Common',         context: '1 in 100–1,000',  color: '#ffa726' },
+  { tier: 5, label: 'Very Common',    context: '> 1 in 100',      color: '#ef5350' },
+];
+
+const RISK_COLORS = {
+  genetic:       { bg: 'rgba(126,87,194,0.18)',  text: '#b39ddb', border: 'rgba(126,87,194,0.45)' },
+  biological:    { bg: 'rgba(239,83,80,0.15)',   text: '#ef9a9a', border: 'rgba(239,83,80,0.4)'  },
+  lifestyle:     { bg: 'rgba(255,167,38,0.15)',  text: '#ffcc80', border: 'rgba(255,167,38,0.4)' },
+  environmental: { bg: 'rgba(102,187,106,0.15)', text: '#a5d6a7', border: 'rgba(102,187,106,0.4)'},
+  demographic:   { bg: 'rgba(66,165,245,0.15)',  text: '#90caf9', border: 'rgba(66,165,245,0.4)' },
+};
+
+const TX_LABELS = {
+  medication_oral:     'Oral Medication',
+  medication_topical:  'Topical Medication',
+  surgery:             'Surgery',
+  therapy_physical:    'Physical Therapy',
+  therapy_behavioral:  'Behavioral Therapy',
+  lifestyle_change:    'Lifestyle Change',
+  monitoring:          'Monitoring',
+  supportive_care:     'Supportive Care',
+  palliative:          'Palliative Care',
+};
 
 function initInfographic() {
   const section = document.getElementById('infographic');
@@ -45,6 +74,11 @@ function initInfographic() {
       descEl.textContent = 'No description available for this disease.';
       linkEl.style.display = 'none';
     }
+
+    // Extra info cards
+    renderRiskFactors(meta);
+    renderPrevalence(meta);
+    renderTreatment(meta);
 
     // Word cloud of symptoms
     const diseaseRow = AppState.diseaseData.find(d => d.disease === diseaseName);
@@ -111,5 +145,77 @@ function initInfographic() {
     if (!meta || !meta.bodily_system) return '#8b949e';
     const primarySystem = meta.bodily_system.split(',')[0].trim();
     return systemColors[primarySystem] || '#8b949e';
+  }
+
+  // ── Risk Factors card ──────────────────────────────────────────────────────
+  function renderRiskFactors(meta) {
+    const el = document.getElementById('risk-factors-content');
+    if (!el) return;
+    if (!meta?.risk_factors?.length) {
+      el.innerHTML = '<p class="placeholder-text">No data available.</p>';
+      return;
+    }
+
+    // Group by type so related factors cluster together
+    const byType = {};
+    meta.risk_factors.forEach(rf => {
+      (byType[rf.type] = byType[rf.type] || []).push(rf.label);
+    });
+
+    const tags = meta.risk_factors.map(rf => {
+      const c = RISK_COLORS[rf.type] || RISK_COLORS.biological;
+      return `<span class="rf-tag" style="background:${c.bg};color:${c.text};border-color:${c.border}" title="${rf.type}">${rf.label}</span>`;
+    }).join('');
+
+    const legend = Object.entries(RISK_COLORS)
+      .filter(([type]) => byType[type])
+      .map(([type, c]) => `<span class="rf-legend-dot" style="background:${c.text}"></span><span style="color:${c.text}">${type}</span>`)
+      .join('');
+
+    el.innerHTML = `<div class="rf-tags">${tags}</div><div class="rf-legend">${legend}</div>`;
+  }
+
+  // ── Prevalence card ────────────────────────────────────────────────────────
+  function renderPrevalence(meta) {
+    const el = document.getElementById('prevalence-content');
+    if (!el) return;
+    if (!meta?.prevalence_tier) {
+      el.innerHTML = '<p class="placeholder-text">No data available.</p>';
+      return;
+    }
+
+    const tier = meta.prevalence_tier;
+    const info = PREVALENCE_TIERS[tier - 1];
+
+    const steps = PREVALENCE_TIERS.map(t => {
+      const active = t.tier <= tier;
+      const style  = active ? `background:${info.color};opacity:${0.4 + 0.6 * (t.tier / tier)}` : '';
+      return `<div class="prev-step${active ? ' active' : ''}" style="${style}"></div>`;
+    }).join('');
+
+    el.innerHTML = `
+      <div class="prevalence-gauge">${steps}</div>
+      <div class="prevalence-label" style="color:${info.color}">${info.label}</div>
+      <div class="prevalence-context">${info.context} people affected</div>`;
+  }
+
+  // ── Treatment card ─────────────────────────────────────────────────────────
+  function renderTreatment(meta) {
+    const el = document.getElementById('treatment-content');
+    if (!el) return;
+    if (!meta?.treatment_types?.length) {
+      el.innerHTML = '<p class="placeholder-text">No data available.</p>';
+      return;
+    }
+
+    const pills = meta.treatment_types
+      .map(t => `<span class="tx-tag">${TX_LABELS[t] || t}</span>`)
+      .join('');
+
+    const summary = meta.treatment_summary
+      ? `<p class="tx-summary">${meta.treatment_summary}</p>`
+      : '';
+
+    el.innerHTML = `<div class="tx-tags">${pills}</div>${summary}`;
   }
 }

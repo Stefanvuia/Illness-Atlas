@@ -139,7 +139,10 @@ async function loadAllData() {
     return parsed;
   });
 
-  AppState.symptomList = symptomCols;
+  // Filter out symptoms with no associated diseases in the dataset
+  AppState.symptomList = symptomCols.filter(s =>
+    AppState.diseaseData.some(row => row[s] > 0)
+  );
   AppState.symptomMeta = symptomMeta;
   AppState.metadata = metadata;
 
@@ -151,4 +154,5 @@ loadAllData().then(() => {
   initBubbleCloud();
   initBodyExplorer();
   initInfographic();
+  initRelatedDiseases();
 });

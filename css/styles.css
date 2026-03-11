@@ -189,6 +189,38 @@ body {
   display: none !important;
 }
 
+.symptom-exhausted-msg {
+  margin: 10px 4px 6px;
+  padding: 10px 12px;
+  border-radius: 8px;
+  background: linear-gradient(135deg, rgba(255,215,0,0.08), rgba(240,136,62,0.12));
+  border: 1px solid rgba(255,215,0,0.25);
+  color: #c8a84b;
+  font-size: 12px;
+  line-height: 1.5;
+  display: flex;
+  align-items: flex-start;
+  gap: 8px;
+  animation: exhaustedFadeIn 0.5s ease;
+}
+
+.exhausted-icon {
+  font-size: 14px;
+  flex-shrink: 0;
+  margin-top: 1px;
+  animation: exhaustedSpin 3s linear infinite;
+}
+
+@keyframes exhaustedFadeIn {
+  from { opacity: 0; transform: translateY(-4px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes exhaustedSpin {
+  from { transform: rotate(0deg); }
+  to   { transform: rotate(360deg); }
+}
+
 .selected-symptoms {
   margin-top: 12px;
   display: flex;
@@ -251,6 +283,27 @@ body {
 .zoom-reset-btn:hover {
   background: var(--accent-dim);
   color: var(--text);
+}
+
+.diagnostic-reset-btn {
+  display: block;
+  width: 100%;
+  margin-top: 10px;
+  padding: 7px 0;
+  font-size: 0.8rem;
+  font-weight: 600;
+  background: transparent;
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  color: var(--text-muted);
+  cursor: pointer;
+  transition: background 0.15s, color 0.15s, border-color 0.15s;
+}
+
+.diagnostic-reset-btn:hover {
+  background: rgba(229, 115, 115, 0.1);
+  border-color: #e57373;
+  color: #e57373;
 }
 
 .tooltip {
@@ -452,6 +505,197 @@ body {
   color: var(--border);
   font-size: 0.85rem;
   font-style: italic;
+}
+
+/* ===== INFO EXTRA CARDS (Risk Factors / Prevalence / Treatment) ===== */
+.info-extra-card {
+  flex: 1;
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  padding: 18px 20px;
+}
+
+.info-extra-card h4 {
+  font-size: 0.85rem;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  color: var(--text-muted);
+  margin-bottom: 12px;
+}
+
+/* Risk factors */
+.rf-tags { display: flex; flex-wrap: wrap; gap: 6px; margin-bottom: 10px; }
+.rf-tag {
+  display: inline-block;
+  padding: 3px 10px;
+  border-radius: 20px;
+  font-size: 0.78rem;
+  border: 1px solid;
+  line-height: 1.5;
+}
+.rf-legend {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 4px 12px;
+  font-size: 0.72rem;
+  align-items: center;
+  opacity: 0.8;
+}
+.rf-legend-dot {
+  display: inline-block;
+  width: 7px;
+  height: 7px;
+  border-radius: 50%;
+  vertical-align: middle;
+  margin-right: 3px;
+}
+
+/* Prevalence gauge */
+.prevalence-gauge {
+  display: flex;
+  gap: 5px;
+  margin-bottom: 10px;
+}
+.prev-step {
+  flex: 1;
+  height: 10px;
+  border-radius: 5px;
+  background: var(--border);
+  transition: background 0.3s;
+}
+.prevalence-label {
+  font-size: 1.05rem;
+  font-weight: 600;
+  margin-bottom: 3px;
+}
+.prevalence-context {
+  font-size: 0.78rem;
+  color: var(--text-muted);
+}
+
+/* Treatment */
+.tx-tags { display: flex; flex-wrap: wrap; gap: 6px; margin-bottom: 10px; }
+.tx-tag {
+  padding: 3px 10px;
+  border-radius: 20px;
+  font-size: 0.78rem;
+  background: rgba(88,166,255,0.12);
+  color: var(--accent);
+  border: 1px solid rgba(88,166,255,0.28);
+}
+.tx-summary {
+  font-size: 0.82rem;
+  color: var(--text-muted);
+  line-height: 1.55;
+}
+
+/* ===== RELATED DISEASES RIBBON ===== */
+.ribbon-card {
+  /* Germ background on left; gradient fades to dark on right for diagram readability */
+  background:
+    linear-gradient(to right, transparent 35%, rgba(13,17,23,0.88) 52%, rgba(13,17,23,0.95) 100%),
+    url('../Images/germbackground.avif') no-repeat left center / auto 100%,
+    var(--bg);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  margin-top: 20px;
+  overflow: hidden;
+  min-height: 480px;
+}
+
+.ribbon-card-inner {
+  display: flex;
+  align-items: flex-start;
+  min-height: 480px;
+}
+
+.ribbon-card-right {
+  margin-left: auto;
+  width: 58%;
+  padding: 20px 24px 16px;
+  min-width: 320px;
+}
+
+.ribbon-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 4px;
+}
+
+.ribbon-card h4 {
+  font-size: 1rem;
+  color: var(--text-muted);
+}
+
+.ribbon-slider-wrap {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 0.8rem;
+  color: var(--text-muted);
+}
+
+.ribbon-slider-wrap input[type="range"] {
+  -webkit-appearance: none;
+  width: 90px;
+  height: 4px;
+  background: var(--border);
+  border-radius: 2px;
+  outline: none;
+  cursor: pointer;
+}
+
+.ribbon-slider-wrap input[type="range"]::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  width: 14px;
+  height: 14px;
+  border-radius: 50%;
+  background: var(--accent);
+  cursor: pointer;
+}
+
+#related-n-label {
+  min-width: 14px;
+  text-align: center;
+  color: var(--accent);
+  font-weight: 600;
+}
+
+.ribbon-subtitle {
+  font-size: 0.78rem;
+  color: var(--text-muted);
+  margin-bottom: 12px;
+}
+
+#related-ribbon-container {
+  width: 100%;
+}
+
+#related-ribbon-svg {
+  display: block;
+  width: 100%;
+  overflow: visible;
+}
+
+.ribbon-label {
+  fill: var(--text-muted);
+  font-size: 11px;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+}
+
+.ribbon-center-label {
+  fill: var(--accent);
+  font-size: 12px;
+  font-weight: 600;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+}
+
+.ribbon-legend-label {
+  fill: var(--text);
+  font-size: 10px;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
 }
 
 /* ===== FOOTER ===== */

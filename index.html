@@ -50,7 +50,12 @@
         <div class="symptom-panel">
           <input type="text" class="symptom-search" placeholder="Search symptoms...">
           <div class="symptom-list"></div>
+          <div class="symptom-exhausted-msg" style="display:none">
+            <span class="exhausted-icon">✦</span>
+            <span>These diseases cannot be further distinguished by symptoms</span>
+          </div>
           <div class="selected-symptoms"></div>
+          <button class="diagnostic-reset-btn" style="display:none">↺ Reset</button>
         </div>
         <div class="bubble-container">
           <svg class="bubble-svg"></svg>
@@ -94,21 +99,35 @@
       </div>
     </div>
     <div class="info-extras">
-      <div class="placeholder-card">
+      <div id="risk-factors-card" class="info-extra-card">
         <h4>Risk Factors</h4>
-        <p class="placeholder-text">Coming soon — age, lifestyle, and genetic risk factors.</p>
+        <div id="risk-factors-content"><p class="placeholder-text">Select a disease above.</p></div>
       </div>
-      <div class="placeholder-card">
+      <div id="prevalence-card" class="info-extra-card">
         <h4>Prevalence</h4>
-        <p class="placeholder-text">Coming soon — how common this disease is by demographics.</p>
+        <div id="prevalence-content"><p class="placeholder-text">Select a disease above.</p></div>
       </div>
-      <div class="placeholder-card">
-        <h4>Related Diseases</h4>
-        <p class="placeholder-text">Coming soon — diseases with overlapping symptom profiles.</p>
-      </div>
-      <div class="placeholder-card">
+      <div id="treatment-card" class="info-extra-card">
         <h4>Treatment</h4>
-        <p class="placeholder-text">Coming soon — common treatments, medications, and management strategies.</p>
+        <div id="treatment-content"><p class="placeholder-text">Select a disease above.</p></div>
+      </div>
+    </div>
+    <div id="related-diseases-card" class="ribbon-card">
+      <div class="ribbon-card-inner">
+        <div class="ribbon-card-right">
+          <div class="ribbon-header">
+            <h4>Related Diseases</h4>
+            <div class="ribbon-slider-wrap">
+              <label for="related-n-slider">Show top</label>
+              <input id="related-n-slider" type="range" min="3" max="10" value="5" step="1">
+              <span id="related-n-label">5</span>
+            </div>
+          </div>
+          <p class="ribbon-subtitle">Spike length = Jaccard similarity &nbsp;·&nbsp; Base width = % of selected disease's symptoms &nbsp;·&nbsp; Tip size = % of related disease's symptoms</p>
+          <div id="related-ribbon-container">
+            <svg id="related-ribbon-svg"></svg>
+          </div>
+        </div>
       </div>
     </div>
   </section>
@@ -121,5 +140,6 @@
   <script src="js/bubbleCloud.js"></script>
   <script src="js/bodyExplorer.js"></script>
   <script src="js/infographic.js"></script>
+  <script src="js/relatedDiseases.js"></script>
 </body>
 </html>
