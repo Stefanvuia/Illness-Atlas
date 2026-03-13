@@ -65,7 +65,28 @@
     </div>
   </section>
 
-  <!-- SECTION 2: Body System Explorer -->
+  <!-- SECTION 2: Related Diseases -->
+  <section id="related-diseases" class="section hidden">
+    <h2>Related Diseases</h2>
+    <p class="section-desc">Diseases that share symptoms can be misdiagnosed or co-occur — understanding their similarity helps clinicians distinguish between conditions and identify comorbidity risks. Each spike represents a related disease: <strong>length</strong> encodes symptom overlap (Jaccard similarity), <strong>width</strong> encodes how much of <span id="related-disease-name" class="disease-highlight"></span>'s symptoms are shared, and <strong>dots</strong> show the count of shared symptoms.</p>
+    <div id="related-diseases-card" class="ribbon-card">
+      <div class="ribbon-header">
+        <h4>Related Diseases</h4>
+        <div class="ribbon-slider-wrap">
+          <label for="related-n-slider">Show top</label>
+          <input id="related-n-slider" type="range" min="3" max="10" value="5" step="1">
+          <span id="related-n-label">5</span>
+          <button class="ribbon-back-btn" id="related-back-btn-el" style="display:none">← Back to chart</button>
+        </div>
+      </div>
+      <p class="ribbon-subtitle">
+      <div id="related-ribbon-container">
+        <svg id="related-ribbon-svg"></svg>
+      </div>
+    </div>
+  </section>
+
+  <!-- SECTION 3: Body System Explorer -->
   <section id="body-explorer" class="section hidden">
     <h2>Body Systems Affected</h2>
     <p class="section-desc">Navigate through body systems to see which areas are impacted by <span id="explorer-disease-name" class="disease-highlight"></span>.</p>
@@ -110,24 +131,6 @@
       <div id="treatment-card" class="info-extra-card">
         <h4>Treatment</h4>
         <div id="treatment-content"><p class="placeholder-text">Select a disease above.</p></div>
-      </div>
-    </div>
-    <div id="related-diseases-card" class="ribbon-card">
-      <div class="ribbon-card-inner">
-        <div class="ribbon-card-right">
-          <div class="ribbon-header">
-            <h4>Related Diseases</h4>
-            <div class="ribbon-slider-wrap">
-              <label for="related-n-slider">Show top</label>
-              <input id="related-n-slider" type="range" min="3" max="10" value="5" step="1">
-              <span id="related-n-label">5</span>
-            </div>
-          </div>
-          <p class="ribbon-subtitle">Spike length = Jaccard similarity &nbsp;·&nbsp; Base width = % of selected disease's symptoms &nbsp;·&nbsp; Tip size = % of related disease's symptoms</p>
-          <div id="related-ribbon-container">
-            <svg id="related-ribbon-svg"></svg>
-          </div>
-        </div>
       </div>
     </div>
   </section>

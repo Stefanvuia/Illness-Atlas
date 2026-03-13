@@ -592,29 +592,11 @@ body {
 
 /* ===== RELATED DISEASES RIBBON ===== */
 .ribbon-card {
-  /* Germ background on left; gradient fades to dark on right for diagram readability */
-  background:
-    linear-gradient(to right, transparent 35%, rgba(13,17,23,0.88) 52%, rgba(13,17,23,0.95) 100%),
-    url('../Images/germbackground.avif') no-repeat left center / auto 100%,
-    var(--bg);
+  background: var(--surface);
   border: 1px solid var(--border);
   border-radius: var(--radius);
   margin-top: 20px;
-  overflow: hidden;
-  min-height: 480px;
-}
-
-.ribbon-card-inner {
-  display: flex;
-  align-items: flex-start;
-  min-height: 480px;
-}
-
-.ribbon-card-right {
-  margin-left: auto;
-  width: 58%;
   padding: 20px 24px 16px;
-  min-width: 320px;
 }
 
 .ribbon-header {
@@ -697,6 +679,17 @@ body {
   font-size: 10px;
   font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
 }
+
+.ribbon-back-btn {
+  background: none;
+  border: 1px solid var(--border);
+  color: var(--accent);
+  border-radius: 4px;
+  padding: 2px 10px;
+  font-size: 0.78rem;
+  cursor: pointer;
+}
+.ribbon-back-btn:hover { background: var(--border); }
 
 /* ===== FOOTER ===== */
 footer {
