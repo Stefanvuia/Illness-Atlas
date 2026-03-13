@@ -260,9 +260,20 @@ function initBubbleCloudPanel(panel, mode) {
       if (d.filtered) return;
       AppState.selectedDisease = d.disease;
       fireDiseaseSelect();
+
+      const label = document.getElementById('selected-disease-label');
+      if (label) {
+        const name =
+            d.disease.charAt(0).toUpperCase() +
+                d.disease.slice(1);
+
+        label.textContent = ` - ${name}`;
+      }
+
       bubbles.attr('stroke', 'none').attr('stroke-width', 0);
       d3.select(event.target).attr('stroke', '#f0883e').attr('stroke-width', 3);
       playRipple(d.x, d.y, d.r, '#f0883e');
+
     });
 
   let labels = labelGroup.selectAll('text').data([]).join('text');

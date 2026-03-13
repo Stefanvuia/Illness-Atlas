@@ -15,17 +15,47 @@
   --radius: 8px;
 }
 
+html {
+  scroll-behavior: smooth;
+}
+
 body {
   font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
   background: var(--bg);
   color: var(--text);
   line-height: 1.6;
+
+  height: 100vh;
+  overflow-y: scroll;
+  overflow-x: hidden;
+  scroll-snap-type: y mandatory;
+}
+
+.snap-panel {
+  min-height: 100vh;
+  scroll-snap-align: start;
+  scroll-snap-stop: always;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+ }
+
+.panel-inner {
+  width: min(1200px, calc(100% - 48px));
+  margin: 0 auto;
+  padding: 30px 0;
+}
+
+.free-scroll {
+  scroll-snap-align: start;
+  min-height: auto;
 }
 
 /* ===== HEADER ===== */
 #hero {
   text-align: center;
-  padding: 80px 20px 50px;
   background: linear-gradient(180deg, #161b22 0%, #0d1117 100%);
   border-bottom: 1px solid var(--border);
 }
@@ -38,6 +68,23 @@ body {
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   background-clip: text;
+}
+
+#hero .panel-inner,
+.section .panel-inner,
+footer .panel-inner {
+  animation: fadeUp 0.7s ease;
+}
+
+@keyframes fadeUp {
+  from {
+    opacity: 0;
+    transform: translateY(16px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
 }
 
 .subtitle {
@@ -55,14 +102,41 @@ body {
 
 /* ===== SECTIONS ===== */
 .section {
-  max-width: 1200px;
+  /*max-width: 1200px;
   margin: 0 auto;
-  padding: 60px 24px;
+  padding: 60px 24px;*/
+
+  width: 100%;
 }
 
 .section h2 {
   font-size: 1.8rem;
   margin-bottom: 8px;
+}
+
+.section-nav {
+  position: fixed;
+  right: 20px;
+  top: 50%;
+  transform: translateY(-50%);
+  z-index: 100;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.section-nav a {
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  background: rgba(255,255,255,0.25);
+  border: 1px solid rgba(255,255,255,0.3);
+  transition: transform 0.2s, background 0.2s;
+}
+
+.section-nav a:hover {
+  background: var(--accent);
+  transform: scale(1.2);
 }
 
 .section-desc {
@@ -83,7 +157,7 @@ body {
 .explore-layout {
   display: flex;
   gap: 24px;
-  align-items: flex-start;
+  align-items: stretch;
 }
 
 .symptom-panel {
@@ -94,7 +168,9 @@ body {
   border-radius: var(--radius);
   padding: 16px;
   position: sticky;
-  top: 20px;
+  top: 24px;
+  max-height: 45vh;
+  overflow-y: hidden;
 }
 
 .symptom-search {
@@ -159,7 +235,7 @@ body {
 }
 
 .symptom-list {
-  max-height: 400px;
+  max-height: 50vh;
   overflow-y: auto;
   margin-top: 12px;
 }
@@ -251,12 +327,12 @@ body {
   border: 1px solid var(--border);
   border-radius: var(--radius);
   overflow: hidden;
-  min-height: 600px;
+  min-height: 70vh;
 }
 
 .bubble-svg {
   width: 100%;
-  height: 600px;
+  height: 70vh;
   cursor: grab;
 }
 
@@ -324,7 +400,7 @@ body {
 /* ===== VIS 2: BODY EXPLORER ===== */
 .explorer-layout {
   display: flex;
-  align-items: center;
+  align-items: stretch;
   justify-content: center;
   gap: 16px;
 }
@@ -591,10 +667,47 @@ body {
 }
 
 /* ===== RELATED DISEASES RIBBON ===== */
+.scroll-cue {
+  margin-top: 36px;
+  margin-bottom: 80px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  color: var(--text-muted);
+  gap: 8px;
+  opacity: 0.9;
+}
+
+.scroll-cue-text {
+  font-size: 0.82rem;
+  letter-spacing: 0.02em;
+}
+
+.scroll-cue-arrow {
+  font-size: 1.8rem;
+  color: var(--accent);
+  animation: bounceDown 1.6s infinite;
+}
+
 .ribbon-card {
   background: var(--surface);
   border: 1px solid var(--border);
   border-radius: var(--radius);
+  margin-top: 0;
+  overflow: hidden;
+  min-height: 480px;
+}
+
+.ribbon-card-inner {
+  display: flex;
+  align-items: flex-start;
+  min-height: 480px;
+}
+
+.ribbon-card-right {
+  margin-left: auto;
+  width: 58%;
   margin-top: 20px;
   padding: 20px 24px 16px;
 }
@@ -694,11 +807,15 @@ body {
 /* ===== FOOTER ===== */
 footer {
   text-align: center;
-  padding: 30px 20px;
+  /*padding: 30px 20px;*/
   color: var(--text-muted);
   font-size: 0.85rem;
   border-top: 1px solid var(--border);
-  margin-top: 40px;
+  /*margin-top: 40px;*/
+}
+
+.footer-panel {
+  min-height: 40vh;
 }
 
 /* ===== SCROLLBAR ===== */
