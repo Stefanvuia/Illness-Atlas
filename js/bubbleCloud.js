@@ -260,9 +260,37 @@ function initBubbleCloudPanel(panel, mode) {
       if (d.filtered) return;
       AppState.selectedDisease = d.disease;
       fireDiseaseSelect();
+
+      const label = document.getElementById('selected-disease-label');
+      if (label) {
+        const name =
+            d.disease.charAt(0).toUpperCase() +
+                d.disease.slice(1);
+
+        label.textContent = ` - ${name}`;
+      }
+
       bubbles.attr('stroke', 'none').attr('stroke-width', 0);
       d3.select(event.target).attr('stroke', '#f0883e').attr('stroke-width', 3);
       playRipple(d.x, d.y, d.r, '#f0883e');
+
+      /*setTimeout(() => {
+        const targets = [
+          document.getElementById('body-explorer'),
+          document.getElementById('infographic')
+        ];
+
+        const firstVisible = targets.find(el =>
+            el && getComputedStyle(el).display !== 'none'
+        );
+
+        if (firstVisible) {
+          firstVisible.scrollIntoView({
+            behavior: 'smooth',
+            block: 'start'
+          });
+        }
+      }, 150);*/
     });
 
   let labels = labelGroup.selectAll('text').data([]).join('text');
