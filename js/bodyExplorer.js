@@ -56,9 +56,6 @@ function initBodyExplorer() {
     currentIndex = 0;
     renderDots();
     renderSystem();
-
-    // Scroll into view
-    section.scrollIntoView({ behavior: 'smooth', block: 'start' });
   }
 
   function renderDots() {
@@ -79,10 +76,10 @@ function initBodyExplorer() {
     systemImage.alt = system;
 
     // Wait for image to load to get actual dimensions
-    systemImage.onload = () => drawAnnotations(system);
+    systemImage.onload = () => requestAnimationFrame(() => drawAnnotations(system));
 
-    // If already cached
-    if (systemImage.complete) drawAnnotations(system);
+    // If already cached, defer one frame so layout is recalculated
+    if (systemImage.complete) requestAnimationFrame(() => drawAnnotations(system));
   }
 
   function drawAnnotations(system) {

@@ -103,7 +103,8 @@ function initRelatedDiseases() {
     section.classList.remove('hidden');
     if (descNameEl) descNameEl.textContent = name;
 
-    if (radarG) { radarG.remove(); radarG = null; }
+    if (radarG) { radarG.interrupt(); radarG.remove(); radarG = null; }
+    if (germG)  { germG.interrupt();  germG.remove();  germG  = null; }
     if (backBtn) backBtn.style.display = 'none';
     renderGerm(name);
   });
@@ -154,7 +155,7 @@ function initRelatedDiseases() {
   // ── Main render ───────────────────────────────────────────────────────────
   function renderGerm(diseaseName) {
     const svg = d3.select('#related-ribbon-svg');
-    svg.selectAll('*').remove();
+    svg.selectAll('*').interrupt().remove();
     germG = null; radarG = null;
 
     if (!diseaseName) return;
