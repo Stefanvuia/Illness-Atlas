@@ -56,12 +56,16 @@ function initInfographic() {
   AppState.onDiseaseSelect.push(onDiseaseSelected);
 
   function onDiseaseSelected(diseaseName) {
+    const relatedSection = document.getElementById('related-section');
+
     if (!diseaseName) {
       section.classList.add('hidden');
+      if (relatedSection) relatedSection.classList.add('hidden');
       return;
     }
 
     section.classList.remove('hidden');
+    if (relatedSection) relatedSection.classList.remove('hidden');
 
     // Disease description
     const meta = AppState.metadata.find(m => m.disease === diseaseName);

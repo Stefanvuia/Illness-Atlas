@@ -667,6 +667,29 @@ footer .panel-inner {
 }
 
 /* ===== RELATED DISEASES RIBBON ===== */
+.scroll-cue {
+  margin-top: 36px;
+  margin-bottom: 80px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  color: var(--text-muted);
+  gap: 8px;
+  opacity: 0.9;
+}
+
+.scroll-cue-text {
+  font-size: 0.82rem;
+  letter-spacing: 0.02em;
+}
+
+.scroll-cue-arrow {
+  font-size: 1.8rem;
+  color: var(--accent);
+  animation: bounceDown 1.6s infinite;
+}
+
 .ribbon-card {
   /* Germ background on left; gradient fades to dark on right for diagram readability */
   background:
@@ -675,7 +698,7 @@ footer .panel-inner {
     var(--bg);
   border: 1px solid var(--border);
   border-radius: var(--radius);
-  margin-top: 20px;
+  margin-top: 0;
   overflow: hidden;
   min-height: 480px;
 }
