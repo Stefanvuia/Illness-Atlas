@@ -75,7 +75,30 @@
     </div>
   </section>
 
-  <!-- SECTION 2: Body System Explorer -->
+  <!-- SECTION 2: Related Diseases -->
+  <section id="related-diseases" class="section snap-panel hidden">
+    <div class="panel-inner related-panel-inner">
+      <h2>Related Diseases</h2>
+      <p class="section-desc">Diseases that share symptoms can be misdiagnosed or co-occur — understanding their similarity helps clinicians distinguish between conditions and identify comorbidity risks. Each spike represents a related disease: <strong>length</strong> encodes symptom overlap (Jaccard similarity), <strong>width</strong> encodes how much of <span id="related-disease-name" class="disease-highlight"></span>'s symptoms are shared, and <strong>dots</strong> show the count of shared symptoms.</p>
+      <div id="related-diseases-card" class="ribbon-card">
+        <div class="ribbon-header">
+          <h4>Related Diseases</h4>
+          <div class="ribbon-slider-wrap">
+            <label for="related-n-slider">Show top</label>
+            <input id="related-n-slider" type="range" min="3" max="10" value="5" step="1">
+            <span id="related-n-label">5</span>
+            <button class="ribbon-back-btn" id="related-back-btn-el" style="display:none">← Back to chart</button>
+          </div>
+        </div>
+        <p class="ribbon-subtitle">
+        <div id="related-ribbon-container">
+          <svg id="related-ribbon-svg"></svg>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- SECTION 3: Body System Explorer -->
   <section id="body-explorer" class="section snap-panel hidden">
     <div class="panel-inner">
       <h2>Body Systems Affected</h2>
@@ -88,13 +111,11 @@
             <img id="system-image" src="" alt="">
             <svg id="explorer-svg"></svg>
           </div>
-          <div id="symptom-annotations"></div>
-        </div>
         <button id="next-system" class="nav-btn">&rarr;</button>
       </div>
       <div id="system-dots"></div>
     </div>
-  </section>
+  </section>      
 
   <!-- SECTION 3: Disease Infographic -->
   <section id="infographic" class="section snap-panel free-scroll hidden">
@@ -128,29 +149,6 @@
       <div class="scroll-cue">
         <span class="scroll-cue-text">Scroll to explore related diseases</span>
         <span class="scroll-cue-arrow">↓</span>
-      </div>
-    </div>
-  </section>
-
-  <section id="related-section" class="section snap-panel hidden">
-    <div class="panel-inner related-panel-inner">
-      <div id="related-diseases-card" class="ribbon-card">
-        <div class="ribbon-card-inner">
-          <div class="ribbon-card-right">
-            <div class="ribbon-header">
-              <h4>Related Diseases</h4>
-              <div class="ribbon-slider-wrap">
-                <label for="related-n-slider">Show top</label>
-                <input id="related-n-slider" type="range" min="3" max="10" value="5" step="1">
-                <span id="related-n-label">5</span>
-              </div>
-            </div>
-            <p class="ribbon-subtitle">Spike length = Jaccard similarity &nbsp;·&nbsp; Base width = % of selected disease's symptoms &nbsp;·&nbsp; Tip size = % of related disease's symptoms</p>
-            <div id="related-ribbon-container">
-              <svg id="related-ribbon-svg"></svg>
-            </div>
-          </div>
-        </div>
       </div>
     </div>
   </section>
