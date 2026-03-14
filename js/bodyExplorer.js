@@ -89,7 +89,6 @@ function initBodyExplorer() {
     if (!diseaseRow) return;
 
     const coords = AREA_COORDS[system] || {};
-    const imgRect = systemImage.getBoundingClientRect();
     const canvasRect = systemImage.parentElement.getBoundingClientRect();
     const imgW = systemImage.offsetWidth;
     const imgH = systemImage.offsetHeight;
@@ -125,8 +124,7 @@ function initBodyExplorer() {
     // Limit to top 15 for readability
     const display = symptomsInSystem.slice(0, 15);
 
-    // Draw lines and dots
-    const margin = 20;
+    // Draw numbered markers on the body image
     display.forEach((item, i) => {
       const areaCoord = coords[item.area];
       if (!areaCoord) return;
@@ -134,52 +132,60 @@ function initBodyExplorer() {
       const targetX = offsetX + areaCoord[0] * imgW;
       const targetY = offsetY + areaCoord[1] * imgH;
 
-      // Stagger label positions along the right side
-      const labelSide = i % 2 === 0 ? 'right' : 'left';
-      const labelX = labelSide === 'right' ? canvasRect.width - margin : margin;
-      const labelY = offsetY + 30 + i * 28;
-
-      const lineOpacity = 0.3 + item.correlation * 0.7;
-      const lineWidth = 1 + item.correlation * 3;
-
-      // Draw line
-      explorerSvg.append('line')
-        .attr('x1', labelX)
-        .attr('y1', labelY)
-        .attr('x2', targetX)
-        .attr('y2', targetY)
-        .attr('stroke', strengthColor(item.correlation))
-        .attr('stroke-width', lineWidth)
-        .attr('stroke-opacity', lineOpacity)
-        .attr('stroke-dasharray', '4,2');
-
-      // Draw dot at target
+      // Draw marker at target
       explorerSvg.append('circle')
         .attr('cx', targetX)
         .attr('cy', targetY)
-        .attr('r', 4 + item.correlation * 4)
+        .attr('r', 9 + item.correlation * 4)
         .attr('fill', strengthColor(item.correlation))
-        .attr('fill-opacity', 0.8)
+        .attr('fill-opacity', 0.95)
         .attr('stroke', '#fff')
-        .attr('stroke-width', 1);
+        .attr('stroke-width', 1.5);
 
-      // Draw label text
+      // Draw marker number
       explorerSvg.append('text')
-        .attr('x', labelX + (labelSide === 'right' ? -8 : 8))
-        .attr('y', labelY + 4)
-        .attr('text-anchor', labelSide === 'right' ? 'end' : 'start')
-        .attr('fill', '#e6edf3')
-        .attr('font-size', '11px')
-        .text(`${item.symptom} (${(item.correlation * 100).toFixed(0)}%)`);
+        .attr('x', targetX)
+        .attr('y', targetY + 3.5)
+        .attr('text-anchor', 'middle')
+        .attr('fill', '#0b1220')
+        .attr('font-size', '10px')
+        .attr('font-weight', '700')
+        .text(i + 1);
     });
 
-    // Annotation tags below
-    display.forEach(item => {
-      const tag = document.createElement('span');
+    if (display.length === 0) {
+      const empty = document.createElement('p');
+      empty.className = 'annotation-empty';
+      empty.textContent = 'No symptom annotations are available for this body system.';
+      annotationsEl.appendChild(empty);
+      return;
+    }
+
+    // Annotation list on the right
+    display.forEach((item, i) => {
+      const color = strengthColor(item.correlation);
+      const tag = document.createElement('div');
       tag.className = 'annotation-tag';
-      tag.style.borderColor = strengthColor(item.correlation);
-      tag.style.color = strengthColor(item.correlation);
-      tag.textContent = `${item.symptom}: ${(item.correlation * 100).toFixed(0)}%`;
+      tag.style.borderColor = color;
+
+      const index = document.createElement('span');
+      index.className = 'annotation-index';
+      index.style.color = color;
+      index.style.borderColor = color;
+      index.textContent = i + 1;
+
+      const name = document.createElement('span');
+      name.className = 'annotation-name';
+      name.textContent = item.symptom;
+
+      const value = document.createElement('span');
+      value.className = 'annotation-value';
+      value.style.color = color;
+      value.textContent = `${(item.correlation * 100).toFixed(0)}%`;
+
+      tag.appendChild(index);
+      tag.appendChild(name);
+      tag.appendChild(value);
       annotationsEl.appendChild(tag);
     });
   }

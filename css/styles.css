@@ -420,21 +420,31 @@ footer .panel-inner {
 }
 
 #explorer-viewport {
-  text-align: center;
-  max-width: 500px;
+  display: grid;
+  grid-template-columns: minmax(320px, 520px) minmax(220px, 320px);
+  grid-template-areas:
+    "label label"
+    "canvas annotations";
+  align-items: start;
+  gap: 16px 24px;
+  max-width: 900px;
   width: 100%;
 }
 
 #system-label {
+  grid-area: label;
   font-size: 1.2rem;
   font-weight: 600;
   margin-bottom: 12px;
   color: var(--accent);
+  text-align: left;
 }
 
 #explorer-canvas {
+  grid-area: canvas;
   position: relative;
-  display: inline-block;
+  display: block;
+  width: 100%;
   background: var(--surface);
   border: 1px solid var(--border);
   border-radius: var(--radius);
@@ -443,6 +453,7 @@ footer .panel-inner {
 
 #system-image {
   display: block;
+  width: 100%;
   max-width: 100%;
   max-height: 500px;
   object-fit: contain;
@@ -459,19 +470,58 @@ footer .panel-inner {
 }
 
 #symptom-annotations {
-  margin-top: 16px;
+  grid-area: annotations;
+  margin-top: 0;
   display: flex;
-  flex-wrap: wrap;
-  gap: 8px;
-  justify-content: center;
+  flex-direction: column;
+  gap: 10px;
+  justify-content: flex-start;
+  align-items: stretch;
 }
 
 .annotation-tag {
-  padding: 4px 12px;
-  border-radius: 12px;
-  font-size: 0.8rem;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 10px 12px;
+  border-radius: 14px;
+  font-size: 0.9rem;
   border: 1px solid var(--border);
   background: var(--surface);
+  text-align: left;
+}
+
+.annotation-index {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 26px;
+  height: 26px;
+  border-radius: 999px;
+  border: 1px solid currentColor;
+  font-size: 0.85rem;
+  font-weight: 700;
+  flex-shrink: 0;
+}
+
+.annotation-name {
+  flex: 1;
+  color: var(--text);
+  text-transform: capitalize;
+}
+
+.annotation-value {
+  font-weight: 700;
+}
+
+.annotation-empty {
+  margin: 0;
+  padding: 16px;
+  border: 1px dashed var(--border);
+  border-radius: var(--radius);
+  color: var(--text-muted);
+  background: var(--surface);
+  text-align: left;
 }
 
 #system-dots {
@@ -847,5 +897,12 @@ footer {
     bottom: 16px;
     font-size: 0.82rem;
     padding: 10px 14px;
+  }
+  #explorer-viewport {
+    grid-template-columns: 1fr;
+    grid-template-areas:
+      "label"
+      "canvas"
+      "annotations";
   }
 }
