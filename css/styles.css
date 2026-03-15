@@ -45,7 +45,7 @@ body {
 .panel-inner {
   width: min(1200px, calc(100% - 48px));
   margin: 0 auto;
-  padding: 30px 0;
+  padding: 30px 0 90px 0;
 }
 
 .free-scroll {
@@ -667,28 +667,6 @@ footer .panel-inner {
 }
 
 /* ===== RELATED DISEASES RIBBON ===== */
-.scroll-cue {
-  margin-top: 36px;
-  margin-bottom: 80px;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  color: var(--text-muted);
-  gap: 8px;
-  opacity: 0.9;
-}
-
-.scroll-cue-text {
-  font-size: 0.82rem;
-  letter-spacing: 0.02em;
-}
-
-.scroll-cue-arrow {
-  font-size: 1.8rem;
-  color: var(--accent);
-  animation: bounceDown 1.6s infinite;
-}
 
 .ribbon-card {
   background: var(--surface);
