@@ -105,8 +105,8 @@ function initInfographic() {
     wcSvg.selectAll('*').remove();
 
     const container = document.getElementById('wordcloud-container');
-    const width = container.clientWidth - 40;
-    const height = 350;
+    const width = (container.clientWidth || 500) - 40;
+    const height = 420;
 
     const fontScale = d3.scaleLinear()
       .domain([0, d3.max(words, d => d.value) || 1])

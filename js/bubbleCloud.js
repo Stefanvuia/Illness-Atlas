@@ -437,7 +437,7 @@ function initBubbleCloudPanel(panel, mode) {
         sum += v;
         if (v > 0) matched++;
       });
-      node.score = sum / denom;
+      node.score = (sum * sum) / denom;
       node.matchedCount = matched;
       // coverage: fraction of selected symptoms this disease actually has
       node.coverage = matched / selectedSymptoms.length;

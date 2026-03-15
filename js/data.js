@@ -122,22 +122,9 @@ function fireSymptomChange() {
 
 function fireDiseaseSelect() {
   const scrollY = window.scrollY;
-
-  const oldBodySnap = document.body.style.scrollSnapType;
-  const oldHtmlSnap = document.documentElement.style.scrollSnapType;
-
-  document.body.style.scrollSnapType = 'none';
-  document.documentElement.style.scrollSnapType = 'none';
-
   AppState.onDiseaseSelect.forEach(fn => fn(AppState.selectedDisease));
-
   requestAnimationFrame(() => {
-    window.scrollTo(0, scrollY);
-
-    requestAnimationFrame(() => {
-      document.body.style.scrollSnapType = oldBodySnap || '';
-      document.documentElement.style.scrollSnapType = oldHtmlSnap || '';
-    });
+    window.scrollTo({ top: scrollY, behavior: 'instant' });
   });
 }
 
