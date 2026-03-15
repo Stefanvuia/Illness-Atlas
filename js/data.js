@@ -5,7 +5,7 @@
 const AppState = {
   diseaseData: [],       // rows from Disease_Symptom_Averages.csv
   symptomList: [],       // all symptom column names
-  symptomMeta: [],       // rows from symptoms.csv (symptom, bodily_system, effected_area)
+  symptomMeta: [],       // rows from symptoms_mapped_updated.csv (symptom, bodily_system, effected_area)
   metadata: [],          // rows from disease_metadata.json
   selectedSymptoms: [],  // currently checked symptoms
   selectedDisease: null, // currently clicked disease name
@@ -131,7 +131,7 @@ function fireDiseaseSelect() {
 async function loadAllData() {
   const [diseaseRaw, symptomMeta, metadata] = await Promise.all([
     d3.csv('Data/Disease_Symptom_Averages.csv'),
-    d3.csv('Data/symptoms.csv'),
+    d3.csv('Data/symptoms_mapped_updated.csv'),
     d3.json('Data/disease_metadata.json'),
   ]);
 
