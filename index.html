@@ -82,7 +82,7 @@
       <p class="section-desc">Diseases that share symptoms can be misdiagnosed or co-occur — understanding their similarity helps clinicians distinguish between conditions and identify comorbidity risks. Each spike represents a related disease: <strong>length</strong> encodes symptom overlap (Jaccard similarity), <strong>width</strong> encodes how much of <span id="related-disease-name" class="disease-highlight"></span>'s symptoms are shared, and <strong>dots</strong> show the count of shared symptoms.</p>
       <div id="related-diseases-card" class="ribbon-card">
         <div class="ribbon-header">
-          <h4>Related Diseases</h4>
+          <h3>Related Diseases</h3>
           <div class="ribbon-slider-wrap">
             <label for="related-n-slider">Show top</label>
             <input id="related-n-slider" type="range" min="3" max="10" value="5" step="1">
@@ -90,7 +90,6 @@
             <button class="ribbon-back-btn" id="related-back-btn-el" style="display:none">← Back to chart</button>
           </div>
         </div>
-        <p class="ribbon-subtitle">
         <div id="related-ribbon-container">
           <svg id="related-ribbon-svg"></svg>
         </div>
@@ -158,6 +157,10 @@
     </div>
   </section>
 
+  <button id="back-to-explore-btn" class="floating-back-btn" type="button">
+    ↑ Back to Symptom Explorer
+  </button>
+
   <footer class="snap-panel footer-panel">
     <div class="panel-inner">
       <p>CSC316 Final Project &mdash; Illness Atlas</p>
@@ -170,5 +173,6 @@
   <script src="js/infographic.js"></script>
   <script src="js/relatedDiseases.js"></script>
   <script src="js/scrollSnap.js"></script>
+  <script src="js/backToExplore.js"></script>
 </body>
 </html>
