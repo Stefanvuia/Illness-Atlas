@@ -38,7 +38,14 @@
 
       <!-- Exploratory panel: all symptoms always visible -->
       <div class="vis-panel active" id="panel-exploratory">
-        <p class="panel-desc">Browse freely — select any combination of symptoms and watch diseases resize by relevance.</p>
+        <p class="panel-desc">Select symptoms on the left and watch diseases resize by relevance. <strong>Click any bubble</strong> to explore that disease in depth.</p>
+        <div class="bubble-legend">
+          <span class="legend-item"><span class="legend-swatch" style="background:#3a5a8a"></span> Low match</span>
+          <span class="legend-item"><span class="legend-swatch" style="background:#e07830"></span> High match</span>
+          <span class="legend-item"><span class="legend-swatch" style="background:#ffd700"></span> Top match</span>
+          <span class="legend-item"><span class="legend-circle"></span> Bubble size = relevance score</span>
+          <span class="legend-item legend-pole-hint">Pole label <em>(N)</em> = N diseases share that symptom</span>
+        </div>
         <div class="explore-layout">
           <div class="symptom-panel">
             <input type="text" class="symptom-search" placeholder="Search symptoms...">
@@ -54,7 +61,8 @@
 
       <!-- Diagnostic panel: symptom list narrows to only what remaining diseases have -->
       <div class="vis-panel" id="panel-diagnostic">
-        <p class="panel-desc">Systematically narrow down diseases — after each selection only symptoms present in remaining candidates are shown.</p>
+        <p class="panel-desc">Systematically narrow down diseases — each symptom you pick eliminates diseases that don't have it. <strong>Click any surviving bubble</strong> to explore it.</p>
+        <p class="diagnostic-disclaimer">&#9888; This tool is for <strong>educational exploration only</strong> and is not a medical diagnostic instrument. Its purpose is to illustrate how difficult it is to narrow down diseases from symptoms alone — do not use it for self-diagnosis.</p>
         <div class="explore-layout">
           <div class="symptom-panel">
             <input type="text" class="symptom-search" placeholder="Search symptoms...">

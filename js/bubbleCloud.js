@@ -191,6 +191,7 @@ function initBubbleCloudPanel(panel, mode) {
   const MIN_RADIUS = 6;
   const MAX_RADIUS = 62;
   const DEFAULT_RADIUS = 8;
+  let currentMaxScore = 1; // updated each render; used for tooltip normalization
 
   const scoreGradient = d3.scaleSequential(d3.interpolate('#3a5a8a', '#e07830')).domain([0, 1]);
   const COLOR_DEFAULT = '#3a5a8a';
@@ -257,7 +258,7 @@ function initBubbleCloudPanel(panel, mode) {
     .on('mouseover', (event, d) => {
       if (d.filtered) return;
       tooltip.style('opacity', 1)
-        .html(`<strong>${d.disease}</strong>${d.score > 0 ? `<br>Score: ${(d.score * 100).toFixed(1)}%` : ''}`);
+        .html(`<strong>${d.disease}</strong>${d.score > 0 ? `<br>Relevance: ${(d.score / currentMaxScore * 100).toFixed(0)}%<br><span style="font-size:0.85em;color:#8b949e">Click to explore →</span>` : ''}`);
       d3.select(event.target).attr('stroke', '#fff').attr('stroke-width', 2);
     })
     .on('mousemove', (event) => {
@@ -498,6 +499,7 @@ function initBubbleCloudPanel(panel, mode) {
 
     const allActive = survivors.concat(toRestore);
     const maxScore = d3.max(allActive, n => n.score) || 1;
+    currentMaxScore = maxScore;
     // Max bubble radius shrinks gently as count grows — 500/√N gives ~62px at
     // ~65 bubbles, ~35px at 200, ~20px at 600+. Floor raised to 20 so labels
     // remain readable; auto-zoom handles any crowding instead.
