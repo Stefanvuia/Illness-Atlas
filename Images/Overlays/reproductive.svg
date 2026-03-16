@@ -1,0 +1,20 @@
+<svg width="243" height="390" viewBox="0 0 243 390" fill="none" xmlns="http://www.w3.org/2000/svg">
+<g id="reproductive">
+<path id="uterus" class="organ-region" d="M174 178H162L168 190.5L174 178Z" fill="#FF0000" fill-opacity="0.01"/>
+<ellipse id="breast" class="organ-region" cx="167" cy="116.5" rx="34" ry="14.5" fill="#FF0000" fill-opacity="0.01"/>
+<g id="ovaries" class="organ-region">
+<ellipse id="Ellipse 30" cx="182.5" cy="183.5" rx="3.5" ry="2.5" fill="#FF0000" fill-opacity="0.01"/>
+<ellipse id="Ellipse 29" cx="153.5" cy="183.5" rx="3.5" ry="2.5" fill="#FF0000" fill-opacity="0.01"/>
+</g>
+<path id="pelvis" class="organ-region" d="M204 171.5H131L134 184L168 203.5L201 184L204 171.5Z" fill="#FF0000" fill-opacity="0.01"/>
+<ellipse id="vagina" class="organ-region" cx="168" cy="196.5" rx="4" ry="5.5" fill="#FF0000" fill-opacity="0.01"/>
+<ellipse id="vulva" class="organ-region" cx="168" cy="202" rx="5" ry="3" fill="#FF0000" fill-opacity="0.01"/>
+<ellipse id="groin" class="organ-region" cx="85.963" cy="199.313" rx="10.0912" ry="14.4862" transform="rotate(12.3832 85.963 199.313)" fill="#FF0000" fill-opacity="0.01"/>
+<ellipse id="penis" class="organ-region" cx="76" cy="205" rx="5" ry="11" fill="#FF0000" fill-opacity="0.01"/>
+<ellipse id="prostate" class="organ-region" cx="76" cy="192" rx="6" ry="4" fill="#FF0000" fill-opacity="0.01"/>
+<g id="testes" class="organ-region">
+<ellipse id="Ellipse 32" cx="82.5" cy="205.5" rx="3.5" ry="4.5" fill="#FF0000" fill-opacity="0.01"/>
+<ellipse id="Ellipse 31" cx="69.5" cy="205.5" rx="3.5" ry="4.5" fill="#FF0000" fill-opacity="0.01"/>
+</g>
+</g>
+</svg>

@@ -1,0 +1,17 @@
+<svg width="172" height="390" viewBox="0 0 172 390" fill="none" xmlns="http://www.w3.org/2000/svg">
+<g id="digestive_system_overlay">
+<ellipse id="mouth" class="organ-region" cx="86" cy="50.5" rx="7" ry="4.5" fill="#FF0000" fill-opacity="0.01"/>
+<ellipse id="lips" class="organ-region" cx="86" cy="48" rx="7" ry="1" fill="#FF0000" fill-opacity="0.01"/>
+<ellipse id="gums" class="organ-region" cx="86" cy="48" rx="7" ry="1" fill="#FF0000" fill-opacity="0.01"/>
+<ellipse id="teeth" class="organ-region" cx="86" cy="48.5" rx="7" ry="1.5" fill="#FF0000" fill-opacity="0.01"/>
+<ellipse id="tongue" class="organ-region" cx="86" cy="51" rx="4" ry="2" fill="#FF0000" fill-opacity="0.01"/>
+<rect id="esophagus" class="organ-region" x="84" y="57" width="4" height="57" fill="#FF0000" fill-opacity="0.01"/>
+<path id="stomach" class="organ-region" d="M94 120L91 122.5V127.5L92 130.5L90.5 133.5L87.5 134L81.5 135L76.5 135.5L73.5 136.5L72 138.5V141.5L74.5 143.5H76.5L75.5 142L74.5 139.5L76.5 137.5L82 139L87 142H94L98.5 139L103.5 134.5L105.5 130.5L104.5 124.5L102 120L98.5 119L94 120Z" fill="#FF0000" fill-opacity="0.01"/>
+<path id="liver" class="organ-region" d="M95 115H66.5L63 117.5L61.5 120.5V136.5L62 139L65.5 140L76 133L79 130L83 129L88.5 123.5L94.5 118.5L96.5 117L95 115Z" fill="#FF0000" fill-opacity="0.01"/>
+<path id="abdomen" class="organ-region" d="M118 135H53.5V148.5L48.5 171H86H123.5L118 148.5V135Z" fill="#FF0000" fill-opacity="0.01"/>
+<path id="lower_abdomen" class="organ-region" d="M44 189L48.5 169H123.5L127.5 189H44Z" fill="#FF0000" fill-opacity="0.01"/>
+<path id="intestines" class="organ-region" d="M72 145L64.5 142H59.5L58.5 148L57.5 158.5L58.5 178L62 181.5L67.5 184L68.5 181.5H72H77.5L82 184L86.5 185L112.5 188L114.5 184L112.5 138.5L107.5 137L101 140.5L95 145H86.5H72Z" fill="#FF0000" fill-opacity="0.01"/>
+<path id="rectum" class="organ-region" d="M87 179L83.5 181.5L81.5 184V189.5L83.5 193V197.5H89.5V194.5L91.5 189.5L92.5 181.5L87 179Z" fill="#FF0000" fill-opacity="0.01"/>
+<path id="anus" class="organ-region" d="M89.5 200L86.5 203.5L83.5 200V197.5H89.5V200Z" fill="#FF0000" fill-opacity="0.01"/>
+</g>
+</svg>

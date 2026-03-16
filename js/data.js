@@ -15,17 +15,18 @@ const AppState = {
 
 // Map original bodily_system names to image filenames
 const SYSTEM_TO_IMAGE = {
-  Cardiovascular: 'Cardiovascular', Hematologic: 'Cardiovascular',
-  Respiratory: 'Respiratory',
-  ENT: 'ENT',
-  Gastrointestinal: 'Gastrointestinal', Digestive: 'Gastrointestinal', Dental: 'Gastrointestinal',
-  Musculoskeletal: 'Musculoskeletal',
-  Dermatologic: 'Dermatologic',
-  Neurological: 'Neurological', Psychological: 'Neurological', Behavioral: 'Neurological', Ophthalmic: 'Neurological',
-  Urinary: 'Urogenital', Renal: 'Urogenital', Reproductive: 'Urogenital', Genitourinary: 'Urogenital',
-  Endocrine: 'Endocrine', Metabolic: 'Endocrine',
-  Immune: 'Immune', Lymphatic: 'Immune', Thermoregulatory: 'Immune',
-  General: 'Pediatric', Systemic: 'Pediatric', Pediatric: 'Pediatric',
+  'nervous': 'Nervous',
+  'respiratory': 'Respiratory',
+  'circulatory': 'Circulatory',
+  'ent': 'ENT',
+  'digestive': 'Digestive',
+  'integumentary': 'Integumentary',
+  'urinary': 'Urinary',
+  'reproductive': 'Reproductive',
+  'musculoskeletal': 'Musculoskeletal',
+  'endocrine': 'Endocrine',
+  'immune': 'Immune',
+  'lymphatic': 'Lymphatic',
 };
 
 // Normalized pixel coordinates for affected areas on each image (x%, y%)

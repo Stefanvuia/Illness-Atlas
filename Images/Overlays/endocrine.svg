@@ -1,0 +1,17 @@
+<svg width="172" height="390" viewBox="0 0 172 390" fill="none" xmlns="http://www.w3.org/2000/svg">
+<g id="endocrine_system_overlay">
+<g id="pituitary" class="organ-region">
+<ellipse id="Ellipse 3" cx="86" cy="30.5" rx="3" ry="1.5" fill="#FF0000" fill-opacity="0.01"/>
+<ellipse id="Ellipse 4" cx="86" cy="39.5" rx="3" ry="1.5" fill="#FF0000" fill-opacity="0.01"/>
+<ellipse id="Ellipse 5" cx="86" cy="35" rx="3" ry="2" fill="#FF0000" fill-opacity="0.01"/>
+</g>
+<path id="thyroid" class="organ-region" d="M80 63.5C78 65.9 80.8334 69.5 82.5 71.5V80C82.5 80 81.5 93 81.5 94C81.5 95 84.7613 98.6698 86.5 98C91.1769 96.1983 90.3333 87 89.5 80V71.5C90.6667 69.6667 92.7 65.5 91.5 63.5C90.3 61.5 87.5 66 86 68C85 65.5 82 61.1 80 63.5Z" fill="#FF0000" fill-opacity="0.01"/>
+<g id="pancreas" class="organ-region">
+<ellipse id="Ellipse 6" cx="73" cy="145" rx="4" ry="3" fill="#FF0000" fill-opacity="0.01"/>
+<ellipse id="Ellipse 7" cx="98" cy="143" rx="4" ry="3" fill="#FF0000" fill-opacity="0.01"/>
+<path id="Vector 3" d="M75.5 152.5L73.5 155.5V159L75.5 163.5H81L83.5 158L98 155.5L105.5 152.5V149.5L102.5 148L81 149.5L75.5 152.5Z" fill="#FF0000" fill-opacity="0.01"/>
+</g>
+<ellipse id="ovaries" class="organ-region" cx="101.5" cy="185.5" rx="3.5" ry="2.5" fill="#FF0000" fill-opacity="0.01"/>
+<ellipse id="testes" class="organ-region" cx="79.5" cy="208.5" rx="2.5" ry="4.5" fill="#FF0000" fill-opacity="0.01"/>
+</g>
+</svg>

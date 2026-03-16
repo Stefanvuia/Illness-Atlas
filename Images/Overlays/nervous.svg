@@ -1,0 +1,10 @@
+<svg width="172" height="390" viewBox="0 0 172 390" fill="none" xmlns="http://www.w3.org/2000/svg">
+<g id="nervous">
+<ellipse id="brain" class="organ-region" cx="86" cy="26" rx="16" ry="18" fill="#FF0000" fill-opacity="0.01"/>
+<g id="eyes" class="organ-region">
+<ellipse id="Ellipse 27" cx="77.5" cy="33" rx="4.5" ry="3" fill="#FF0000" fill-opacity="0.01"/>
+<ellipse id="Ellipse 28" cx="93.5" cy="33" rx="4.5" ry="3" fill="#FF0000" fill-opacity="0.01"/>
+</g>
+<path id="peripheral_nerves" class="organ-region" d="M74 35.5L69.5 39L77.5 55.5L72 64.5L55 79L38.5 101.5L11 200.5H18.5L34.5 158.5L45.5 112L55 96L53 110.5L57.5 128.5L60.5 138.5L62.5 147L53 171.5L45.5 203.5L47.5 221.5L60.5 258.5L53 278L49 298L55.5 362.5L66.5 364.5L74 276L69.5 231L64.5 208L67 200.5L82.5 192H89.5L105 200.5L108 208L102 231L99 276L105.5 364.5L115 362.5L121.5 298L113 258.5L121.5 222L119.5 171.5L108 147L110.5 138.5L115.5 128.5L117.5 110.5L115.5 96L126.5 110.5L136 149L152 188.5V200.5H160L132 101.5L115.5 79L98 64.5L95 55.5L103 39L98 35.5L93 49.5H80L74 35.5Z" fill="#FF0000" fill-opacity="0.01"/>
+</g>
+</svg>

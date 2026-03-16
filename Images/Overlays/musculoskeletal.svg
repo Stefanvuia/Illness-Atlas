@@ -1,0 +1,55 @@
+<svg width="172" height="390" viewBox="0 0 172 390" fill="none" xmlns="http://www.w3.org/2000/svg">
+<g id="musculoskeletal">
+<path id="neck" class="organ-region" d="M84 59L74.5 54.5L68 67H102L96.5 54.5L84 59Z" fill="#FF0000" fill-opacity="0.01"/>
+<g id="shoulder" class="organ-region">
+<ellipse id="Ellipse 11" cx="10.4621" cy="14.1542" rx="10.4621" ry="14.1542" transform="matrix(-0.83718 0.546927 0.546927 0.83718 124.517 70)" fill="#FF0000" fill-opacity="0.01"/>
+<ellipse id="Ellipse 10" cx="47.5" cy="87.5716" rx="10.4621" ry="14.1542" transform="rotate(33.1565 47.5 87.5716)" fill="#FF0000" fill-opacity="0.01"/>
+</g>
+<g id="arm" class="organ-region">
+<path id="Vector 5" d="M133 84L138.5 109L142.5 132.5L149.5 146L157 191H147L133 150.5L117 115L112 96V84L120.5 77L133 84Z" fill="#FF0000" fill-opacity="0.01"/>
+<path id="Vector 4" d="M37 84L31.5 109L27.5 132.5L20.5 146L13 191H23L37 150.5L53 115L58 96V84L49.5 77L37 84Z" fill="#FF0000" fill-opacity="0.01"/>
+</g>
+<g id="elbow" class="organ-region">
+<ellipse id="Ellipse 12" cx="30.5726" cy="139.362" rx="11" ry="8" transform="rotate(13.5994 30.5726 139.362)" fill="#FF0000" fill-opacity="0.01"/>
+<ellipse id="Ellipse 13" cx="11" cy="8" rx="11" ry="8" transform="matrix(-0.971964 0.235131 0.235131 0.971964 148.383 129)" fill="#FF0000" fill-opacity="0.01"/>
+</g>
+<g id="wrist" class="organ-region">
+<ellipse id="Ellipse 15" cx="7.91697" cy="5.92701" rx="7.91697" ry="5.92701" transform="matrix(-0.938147 0.346236 0.346236 0.938147 157.855 186)" fill="#FF0000" fill-opacity="0.01"/>
+<ellipse id="Ellipse 14" cx="16.4794" cy="194.302" rx="7.91697" ry="5.92701" transform="rotate(20.2573 16.4794 194.302)" fill="#FF0000" fill-opacity="0.01"/>
+</g>
+<g id="hand" class="organ-region">
+<path id="Vector 7" d="M166.5 206.5L160.5 192L149.5 195L147 200V209.5V217L150.5 215L153 208.5L155 207.5L159 218.5L158 222.5L160.5 229H164.5L166.5 221L168 215L166.5 206.5Z" fill="#FF0000" fill-opacity="0.01"/>
+<path id="Vector 6" d="M5 206.5L11 192L22 195L24.5 200V209.5V217L21 215L18.5 208.5L16.5 207.5L12.5 218.5L13.5 222.5L11 229H7L5 221L3.5 215L5 206.5Z" fill="#FF0000" fill-opacity="0.01"/>
+</g>
+<path id="rib" class="organ-region" d="M102.5 73L92 69V121.5L98 126L100.5 134L110 143L118.5 129L122.5 109L118.5 98L114.5 88L110 78.5L102.5 73Z" fill="#FF0000" fill-opacity="0.01"/>
+<path id="back" class="organ-region" d="M53.5 76.5L65 69H107L122 76.5L131.5 80L117 133V149.5L122 163H50L55.5 149.5L53.5 133L40.5 80L53.5 76.5Z" fill="#FF0000" fill-opacity="0.01"/>
+<path id="hip" class="organ-region" d="M119.5 159.5H51L45.5 182L43 200H128.5V196L126.5 182L119.5 159.5Z" fill="#FF0000" fill-opacity="0.01"/>
+<g id="leg" class="organ-region">
+<path id="Vector 9" d="M88 210L126 197V223L119 260L121 277.5L123 296L119 323.5L116 358H102L99 330.5L95.5 313.5V289.5L93.5 277.5L90 262.5L88 210Z" fill="#FF0000" fill-opacity="0.01"/>
+<path id="Vector 8" d="M81.5 209.5L43.5 196.5V222.5L50.5 259.5L48.5 277L46.5 295.5L50.5 323L53.5 357.5H67.5L70.5 330L74 313V289L76 277L79.5 262L81.5 209.5Z" fill="#FF0000" fill-opacity="0.01"/>
+</g>
+<g id="knee" class="organ-region">
+<ellipse id="Ellipse 17" cx="107" cy="272.5" rx="15" ry="9.5" fill="#FF0000" fill-opacity="0.01"/>
+<ellipse id="Ellipse 16" cx="64" cy="272.5" rx="15" ry="9.5" fill="#FF0000" fill-opacity="0.01"/>
+</g>
+<g id="ankle" class="organ-region">
+<ellipse id="Ellipse 19" cx="109" cy="365.5" rx="9" ry="6.5" fill="#FF0000" fill-opacity="0.01"/>
+<ellipse id="Ellipse 18" cx="60" cy="365.5" rx="9" ry="6.5" fill="#FF0000" fill-opacity="0.01"/>
+</g>
+<g id="foot" class="organ-region">
+<path id="Vector 11" d="M128 380.5L115 365H102L100 374V380.5L104 386.5H115L125.5 384.5L128 380.5Z" fill="#FF0000" fill-opacity="0.01"/>
+<path id="Vector 10" d="M42.5 381L55.5 365.5H68.5L70.5 374.5V381L66.5 387H55.5L45 385L42.5 381Z" fill="#FF0000" fill-opacity="0.01"/>
+</g>
+<path id="bones" class="organ-region" d="M97 12.5L87 9V199.5L99 206L102.5 197.5L108 203.5L100 261.5L99 269L100 279L102.5 298L105 346L102.5 362.5L105 366V380H123.5L114 362.5L117.5 296L116.5 279L112.5 272L109.5 259.5L112.5 232.5L116.5 218L123.5 203.5L122 197.5L119.5 194L114 190V183.5L119.5 170L116.5 163.5L110 158.5L99 161.5L94.5 170L92 144.5H102H108L116.5 137L122 109.5L116.5 92.5L125 95L132 134.5L134 148.5L152 194L148.5 202V212.5L152 202L159.5 218L163 221.5L165.5 214.5L154.5 185.5L145 144.5L138 121L132 87.5L125 77.5L105 74.5L97 70.5L92 63.5L94.5 55.5L99 45.5L102 37.5V26.5L97 12.5Z" fill="#FF0000" fill-opacity="0.01"/>
+<path id="muscles" class="organ-region" d="M71 12.5L83 7.5V204L79 267.5L74 286.5V313.5L68.5 334V351.5L66.5 378.5L51 375.5L55.5 360L51 321.5L47 294.5L53 271L43.5 219V197.5L47 177.5L56 145L51 119.5L40.5 148.5L37.5 155L19.5 197.5L11.5 200L19.5 148.5L27.5 132.5L35 90L40.5 80.5L51 77L74 64.5V58L71 50V39L65.5 26.5L71 12.5Z" fill="#FF0000" fill-opacity="0.01"/>
+<g id="joints" class="organ-region">
+<ellipse id="Ellipse 20" cx="32.1706" cy="141.377" rx="10.5" ry="8" transform="rotate(14.5233 32.1706 141.377)" fill="#FF0000" fill-opacity="0.01"/>
+<ellipse id="Ellipse 21" cx="16.5" cy="195.5" rx="6.5" ry="4.5" fill="#FF0000" fill-opacity="0.01"/>
+<ellipse id="Ellipse 22" cx="123.066" cy="90.3178" rx="15.5" ry="12" transform="rotate(24.3156 123.066 90.3178)" fill="#FF0000" fill-opacity="0.01"/>
+<ellipse id="Ellipse 23" cx="109.763" cy="194.186" rx="11.5" ry="9" transform="rotate(-18.5128 109.763 194.186)" fill="#FF0000" fill-opacity="0.01"/>
+<ellipse id="Ellipse 24" cx="63" cy="279.5" rx="14" ry="9.5" fill="#FF0000" fill-opacity="0.01"/>
+<ellipse id="Ellipse 25" cx="110.5" cy="369.5" rx="8.5" ry="5.5" fill="#FF0000" fill-opacity="0.01"/>
+<ellipse id="Ellipse 26" cx="86" cy="61" rx="12" ry="5" fill="#FF0000" fill-opacity="0.01"/>
+</g>
+</g>
+</svg>

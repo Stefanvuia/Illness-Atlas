@@ -1,0 +1,10 @@
+<svg width="172" height="390" viewBox="0 0 172 390" fill="none" xmlns="http://www.w3.org/2000/svg">
+<g id="ent">
+<ellipse id="face" class="organ-region" cx="89" cy="31" rx="20" ry="27" fill="#FF0000" fill-opacity="0.01"/>
+<ellipse id="ear" class="organ-region" cx="70.5" cy="37.0001" rx="4.5" ry="7" transform="rotate(-12.9286 70.5 37.0001)" fill="#FF0000" fill-opacity="0.01"/>
+<ellipse id="jaw" class="organ-region" cx="89" cy="51" rx="17" ry="9" fill="#FF0000" fill-opacity="0.01"/>
+<ellipse id="nose" class="organ-region" cx="88.5" cy="39.5" rx="3.5" ry="5.5" fill="#FF0000" fill-opacity="0.01"/>
+<ellipse id="throat" class="organ-region" cx="88.5" cy="56" rx="5.5" ry="13" fill="#FF0000" fill-opacity="0.01"/>
+<ellipse id="sinuses" class="organ-region" cx="89" cy="42" rx="5" ry="6" fill="#FF0000" fill-opacity="0.01"/>
+</g>
+</svg>
