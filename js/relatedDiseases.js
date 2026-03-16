@@ -340,60 +340,75 @@ function initRelatedDiseases() {
     // ── Legend (inside germG — moves with germ animation) ────────────────────
     // Position: bottom-LEFT of SVG in germG-relative coords.
     // legX = -cx*0.74 keeps the box on-screen even after the 0.58-scale animation.
-    const LEG_W = 120, LEG_H = 90;
-    const LH = 26, iconX = 6, textX = 30;
-    const legX = -cx * 0.74;
-    const legY = cy - 12 - LEG_H;
-    const legG = germG.append('g').attr('transform', `translate(${legX},${legY})`);
+    const LEG_W = 190, LEG_H = 178;
+    const LH = 48, iconX = 10, textX = 44;
+    const legG = svg.append('g').attr('transform', `translate(12,12)`);
 
     legG.append('rect')
       .attr('width', LEG_W).attr('height', LEG_H)
-      .attr('fill', '#0d1117').attr('fill-opacity', 0.88)
-      .attr('rx', 5).attr('stroke', '#30363d').attr('stroke-width', 0.8);
+      .attr('fill', '#0d1117').attr('fill-opacity', 0.92)
+      .attr('rx', 7).attr('stroke', '#3d4450').attr('stroke-width', 1.2);
 
-    // Each row: bold label line + dim value line; icon centred between them
+    // Title
+    legG.append('text').attr('x', LEG_W / 2).attr('y', 14)
+      .attr('text-anchor', 'middle').attr('dominant-baseline', 'middle')
+      .attr('class', 'ribbon-label').attr('font-size', '9px')
+      .attr('fill', '#8b949e').attr('letter-spacing', '0.08em')
+      .text('LEGEND');
+    legG.append('line')
+      .attr('x1', 10).attr('x2', LEG_W - 10).attr('y1', 22).attr('y2', 22)
+      .attr('stroke', '#30363d').attr('stroke-width', 0.8);
+
+    // Each row: label + description line; icon showing the visual encoding
     const rows = [
       {
         icon: (iy) => {
+          // Short line (less similar) above, longer line (more similar) below
           legG.append('line')
-            .attr('x1', iconX).attr('x2', iconX + 8).attr('y1', iy - 3).attr('y2', iy - 3)
-            .attr('stroke', SPIKE_COLOR).attr('stroke-width', 2).attr('stroke-linecap', 'round');
+            .attr('x1', iconX).attr('x2', iconX + 12).attr('y1', iy - 5).attr('y2', iy - 5)
+            .attr('stroke', SPIKE_COLOR).attr('stroke-width', 2.5).attr('stroke-linecap', 'round').attr('opacity', 0.5);
           legG.append('line')
-            .attr('x1', iconX).attr('x2', iconX + 16).attr('y1', iy + 4).attr('y2', iy + 4)
-            .attr('stroke', SPIKE_COLOR).attr('stroke-width', 2).attr('stroke-linecap', 'round');
+            .attr('x1', iconX).attr('x2', iconX + 23).attr('y1', iy + 4).attr('y2', iy + 4)
+            .attr('stroke', SPIKE_COLOR).attr('stroke-width', 2.5).attr('stroke-linecap', 'round');
         },
-        label: 'spike length', value: '= similarity',
+        label: 'Spike Length',
+        lines: ['longer → more similar'],
       },
       {
         icon: (iy) => {
-          legG.append('rect').attr('x', iconX).attr('y', iy - 4).attr('width', 16).attr('height', 3).attr('fill', SPIKE_COLOR).attr('rx', 1);
-          legG.append('rect').attr('x', iconX).attr('y', iy + 2).attr('width', 16).attr('height', 7).attr('fill', SPIKE_COLOR).attr('rx', 1);
+          // Narrow rect above, wide rect below
+          legG.append('rect').attr('x', iconX).attr('y', iy - 7).attr('width', 22).attr('height', 4).attr('fill', SPIKE_COLOR).attr('rx', 1).attr('opacity', 0.5);
+          legG.append('rect').attr('x', iconX).attr('y', iy + 2).attr('width', 22).attr('height', 9).attr('fill', SPIKE_COLOR).attr('rx', 1);
         },
-        label: 'spike width', value: '= % shared',
+        label: 'Spike Width',
+        lines: ['wider →', 'more % symptoms shared'],
       },
       {
         icon: (iy) => {
-          const mR = 4, mDR = 1.5, mOrb = 7, mCx = iconX + mR + 2;
+          const mR = 6, mDR = 2, mOrb = 11, mCx = iconX + mR + 2;
           legG.append('circle').attr('cx', mCx).attr('cy', iy).attr('r', mR)
-            .attr('fill', SPIKE_COLOR).attr('fill-opacity', 0.55).attr('stroke', '#a5f3fc').attr('stroke-width', 0.8);
+            .attr('fill', SPIKE_COLOR).attr('fill-opacity', 0.55).attr('stroke', '#a5f3fc').attr('stroke-width', 1);
           [0, 1, 2, 3].forEach(d => {
             const da = (Math.PI / 2) * d;
             legG.append('circle').attr('cx', mCx + mOrb * Math.cos(da)).attr('cy', iy + mOrb * Math.sin(da)).attr('r', mDR).attr('fill', '#a5f3fc');
           });
         },
-        label: 'tip dots', value: '= # shared',
+        label: 'Tip Dots',
+        lines: ['more dots →', '# shared symptoms'],
       },
     ];
 
-    rows.forEach(({ icon, label, value }, ri) => {
-      const ry = 12 + ri * LH;
-      icon(ry + 6);
+    rows.forEach(({ icon, label, lines }, ri) => {
+      const ry = 28 + ri * LH;
+      icon(ry + 12);
       legG.append('text').attr('x', textX).attr('y', ry)
         .attr('dominant-baseline', 'hanging').attr('class', 'ribbon-label')
-        .attr('font-size', '8px').attr('fill', '#c9d1d9').text(label);
-      legG.append('text').attr('x', textX).attr('y', ry + 12)
-        .attr('dominant-baseline', 'hanging').attr('class', 'ribbon-label')
-        .attr('font-size', '7.5px').attr('fill', '#6e7681').text(value);
+        .attr('font-size', '10px').attr('fill', '#c9d1d9').attr('font-weight', '600').text(label);
+      lines.forEach((line, li) => {
+        legG.append('text').attr('x', textX).attr('y', ry + 15 + li * 11)
+          .attr('dominant-baseline', 'hanging').attr('class', 'ribbon-label')
+          .attr('font-size', '9px').attr('fill', '#6e7681').text(line);
+      });
     });
   }
 
