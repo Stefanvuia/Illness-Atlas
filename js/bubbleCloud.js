@@ -36,7 +36,21 @@ function initBubbleCloudPanel(panel, mode) {
   const height = 600;
   svg.attr('viewBox', `0 0 ${width} ${height}`);
 
+  bindSymptomListScroll(listEl);
+
   const { diseaseData, symptomList } = AppState;
+
+  function bindSymptomListScroll(el) {
+    if (!el) return;
+
+    el.addEventListener('wheel', (event) => {
+      if (el.scrollHeight <= el.clientHeight) return;
+
+      el.scrollTop += event.deltaY;
+      event.preventDefault();
+      event.stopPropagation();
+    }, { passive: false });
+  }
 
   const diseaseSymptomCount = {};
   diseaseData.forEach(row => {

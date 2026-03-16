@@ -397,7 +397,7 @@ footer .panel-inner {
 /* ===== VIS 2: BODY EXPLORER ===== */
 .explorer-layout {
   display: flex;
-  align-items: stretch;
+  align-items: center;
   justify-content: center;
   gap: 16px;
 }
@@ -477,6 +477,10 @@ footer .panel-inner {
   gap: 10px;
   justify-content: flex-start;
   align-items: stretch;
+  max-height: 500px;
+  overflow-y: auto;
+  overscroll-behavior-y: contain;
+  padding-right: 4px;
 }
 
 .annotation-tag {

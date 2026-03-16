@@ -24,6 +24,17 @@ function initBodyExplorer() {
   AppState.onDiseaseSelect.push(onDiseaseSelected);
 
   ensureOverlayContainer();
+  bindAnnotationScroll();
+
+  function bindAnnotationScroll() {
+    annotationsEl.addEventListener('wheel', (event) => {
+      if (annotationsEl.scrollHeight <= annotationsEl.clientHeight) return;
+
+      annotationsEl.scrollTop += event.deltaY;
+      event.preventDefault();
+      event.stopPropagation();
+    }, { passive: false });
+  }
 
   function ensureOverlayContainer() {
     const imageWrap = systemImage.parentElement;
