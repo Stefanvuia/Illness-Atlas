@@ -38,19 +38,20 @@ function initInfographic() {
   const linkEl = document.getElementById('info-link');
   const wcSvg = d3.select('#wordcloud-svg');
 
-  // System-to-color mapping for word cloud coloring
+  // System-to-color mapping for word cloud coloring (keys match bodily_system CSV lowercase values)
   const systemColors = {
-    Cardiovascular: '#ef5350', Hematologic: '#ef5350',
-    Respiratory: '#42a5f5', ENT: '#ab47bc',
-    Gastrointestinal: '#66bb6a', Digestive: '#66bb6a', Dental: '#66bb6a',
-    Musculoskeletal: '#ffa726',
-    Dermatologic: '#ec407a',
-    Neurological: '#7e57c2', Psychological: '#7e57c2', Behavioral: '#7e57c2', Ophthalmic: '#7e57c2',
-    Urinary: '#26c6da', Renal: '#26c6da', Reproductive: '#26c6da', Genitourinary: '#26c6da',
-    Endocrine: '#ffee58',
-    Immune: '#8d6e63', Lymphatic: '#8d6e63', Thermoregulatory: '#8d6e63',
-    General: '#78909c', Systemic: '#78909c', Pediatric: '#78909c',
-    Metabolic: '#ffee58',
+    circulatory:     '#ef5350',
+    respiratory:     '#42a5f5',
+    ent:             '#ab47bc',
+    digestive:       '#66bb6a',
+    musculoskeletal: '#ffa726',
+    integumentary:   '#ec407a',
+    nervous:         '#7e57c2',
+    urinary:         '#26c6da',
+    reproductive:    '#26c6da',
+    endocrine:       '#ffee58',
+    immune:          '#8d6e63',
+    lymphatic:       '#8d6e63',
   };
 
   AppState.onDiseaseSelect.push(onDiseaseSelected);

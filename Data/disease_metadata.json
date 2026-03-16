@@ -15252,9 +15252,9 @@
   },
   {
     "disease": "diaper rash",
-    "description": "Vixen are an American all-female glam rock band formed in Saint Paul, Minnesota, in 1973.",
-    "url": "https://en.wikipedia.org/wiki/Vixen_(band)",
-    "source": "wikipedia",
+    "description": "Diaper rash is a form of dermatitis that looks like patches of inflamed skin on the buttocks, thighs and genitals.",
+    "url": "https://www.mayoclinic.org/diseases-conditions/diaper-rash/symptoms-causes/syc-20371636",
+    "source": "mayoclinic",
     "prevalence_tier": 5,
     "prevalence_label": "Very Common",
     "risk_factors": [

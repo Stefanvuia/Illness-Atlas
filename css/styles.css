@@ -275,6 +275,14 @@ footer .panel-inner {
   flex-shrink: 0;
 }
 
+.click-cta {
+  color: var(--accent);
+  text-decoration: underline;
+  text-decoration-style: dotted;
+  text-underline-offset: 3px;
+}
+
+
 .symptom-list {
   max-height: 50vh;
   overflow-y: auto;
