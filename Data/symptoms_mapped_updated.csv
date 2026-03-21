@@ -1,3 +1,378 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:9f580238ece9c5c95bd1b91cf8f35548717eea809d88298b9dc0e1412afd161c
-size 31178
+symptom,bodily_system,effected_area,mapping_note,old_bodily_system,old_effected_area
+anxiety and nervousness,nervous,brain,Broadly mapped to brain because no psychological system image is available.,Psychological,Brain
+depression,nervous,brain,Broadly mapped to brain because no psychological system image is available.,Psychological,Brain
+shortness of breath,respiratory,lungs,,Respiratory,Lungs
+depressive or psychotic symptoms,nervous,brain,Broadly mapped to brain because no psychological system image is available.,Psychological,Brain
+sharp chest pain,circulatory,heart,Broadly mapped to heart/chest.,Cardiovascular,Chest
+dizziness,nervous,brain,Broadly mapped to brain/central nervous system.,Neurological,Head
+insomnia,nervous,brain,Broadly mapped to brain/sleep regulation.,Psychological,Head
+abnormal involuntary movements,nervous,brain,Broadly mapped to brain/nervous system.,Neurological,Whole Body
+chest tightness,respiratory,lungs,Broadly mapped to lungs/chest.,"Respiratory, Cardiovascular, Musculoskeletal",Chest
+palpitations,circulatory,heart,,Cardiovascular,Heart
+irregular heartbeat,circulatory,heart,,Cardiovascular,Heart
+breathing fast,respiratory,lungs,,Respiratory,Chest
+hoarse voice,respiratory,throat,Broadly mapped to throat/voice box.,"Respiratory, ENT",Vocal Cords
+sore throat,respiratory,throat,,ENT,Throat
+difficulty speaking,nervous,brain,Broadly mapped to brain because the symptom is functional rather than organ-specific.,Neurological,Head
+cough,respiratory,lungs,,Respiratory,Lungs
+nasal congestion,respiratory,nose,,ENT,Nose
+throat swelling,respiratory,throat,,ENT,Throat
+diminished hearing,ent,ear,,ENT,Ear
+lump in throat,respiratory,throat,Broadly mapped to throat.,ENT,Throat
+throat feels tight,respiratory,throat,,ENT,Throat
+difficulty in swallowing,digestive,esophagus,Broadly mapped to esophagus/throat junction.,"Digestive, ENT, Neurological",Throat
+skin swelling,integumentary,skin,,Dermatologic,Skin
+retention of urine,urinary,bladder,,Urinary,Pelvis
+groin mass,reproductive,groin,Broadly mapped to groin/reproductive region.,Reproductive,Groin
+leg pain,musculoskeletal,leg,,Musculoskeletal,Leg
+hip pain,musculoskeletal,hip,,Musculoskeletal,Hip
+suprapubic pain,urinary,bladder,,"Urinary, Reproductive",Bladder
+blood in stool,digestive,intestines,,Gastrointestinal,Abdomen
+lack of growth,endocrine,pituitary,,"Endocrine, Musculoskeletal",Whole Body
+emotional symptoms,nervous,brain,Broadly mapped to brain because no psychological system image is available.,"Psychological, Neurological",Brain
+elbow weakness,musculoskeletal,elbow,,Neurological,Arm
+back weakness,musculoskeletal,back,,Neurological,Back
+pus in sputum,respiratory,lungs,,Respiratory,Chest
+symptoms of the scrotum and testes,reproductive,testes,,Reproductive,Groin
+swelling of scrotum,reproductive,testes,,Reproductive,Groin
+pain in testicles,reproductive,testes,,Reproductive,Groin
+flatulence,digestive,intestines,,Gastrointestinal,Abdomen
+pus draining from ear,ent,ear,,ENT,Ear
+jaundice,digestive,liver,,"Digestive, Hematologic",Skin/Eyes
+mass in scrotum,reproductive,testes,,Reproductive,Groin
+white discharge from eye,nervous,eyes,Broadly mapped to eyes within the nervous/sensory system because ophthalmic is not an allowed system choice.,Ophthalmic,Eye
+irritable infant,immune,whole body,Broadly mapped to whole body because the symptom is systemic or non-localized.,Pediatric,Whole Body
+abusing alcohol,nervous,brain,Broadly mapped to brain because no psychological system image is available.,"Psychological, Behavioral",Brain
+fainting,nervous,brain,Broadly mapped to brain/central nervous system.,Neurological,Whole Body
+hostile behavior,nervous,brain,Broadly mapped to brain because no psychological system image is available.,Psychological,Head
+drug abuse,nervous,brain,Broadly mapped to brain because no psychological system image is available.,"Psychological, Behavioral",Brain
+sharp abdominal pain,digestive,abdomen,,Gastrointestinal,Abdomen
+feeling ill,immune,whole body,Broadly mapped to whole body because it is systemic.,"Immune, Systemic",Whole Body
+vomiting,digestive,stomach,,Gastrointestinal,Stomach
+headache,nervous,brain,,Neurological,Head
+nausea,digestive,stomach,,Gastrointestinal,Stomach
+diarrhea,digestive,intestines,,Gastrointestinal,Intestines
+vaginal itching,reproductive,vagina,,Reproductive,Vagina
+vaginal dryness,reproductive,vagina,,Reproductive,Pelvis
+painful urination,urinary,bladder,,Urinary,Bladder/Urethra
+involuntary urination,urinary,bladder,,Urinary,Pelvis
+pain during intercourse,reproductive,vagina,Broadly mapped to vagina/pelvis.,"Reproductive, Genitourinary",Reproductive Organs
+frequent urination,urinary,bladder,,Urinary,Bladder
+lower abdominal pain,digestive,lower abdomen,,Gastrointestinal,Lower Abdomen
+vaginal discharge,reproductive,vagina,,Reproductive,Vagina
+blood in urine,urinary,bladder,,Urinary,Kidneys/Bladder
+hot flashes,endocrine,ovaries,Broadly mapped to female endocrine system.,Endocrine,Whole Body
+intermenstrual bleeding,reproductive,uterus,,Reproductive,Pelvis
+hand or finger pain,musculoskeletal,hand,,"Musculoskeletal, Neurological",Hand/Finger
+wrist pain,musculoskeletal,wrist,,Musculoskeletal,Wrist
+hand or finger swelling,musculoskeletal,hand,,"Musculoskeletal, Cardiovascular, Renal",Hand/Finger
+arm pain,musculoskeletal,arm,,Musculoskeletal,Arm
+wrist swelling,musculoskeletal,wrist,,Musculoskeletal,Wrist
+arm stiffness or tightness,musculoskeletal,arm,,Musculoskeletal,Arm
+arm swelling,musculoskeletal,arm,,Musculoskeletal,Arm
+hand or finger stiffness or tightness,musculoskeletal,hand,,"Musculoskeletal, Neurological",Hand
+wrist stiffness or tightness,musculoskeletal,wrist,,Musculoskeletal,Wrist
+lip swelling,digestive,lips,,"Dermatologic, Immune",Lips
+toothache,digestive,teeth,Broadly mapped to teeth/oral cavity because dental is not an allowed system choice.,"Dental, Neurological",Teeth
+abnormal appearing skin,integumentary,skin,,ENT,Ear
+skin lesion,integumentary,skin,,Dermatologic,Skin
+acne or pimples,integumentary,skin,,Dermatologic,Skin
+dry lips,digestive,lips,,"Dermatologic, Endocrine",Lips
+facial pain,musculoskeletal,muscles,Broadly mapped from older musculoskeletal label.,"Neurological, Musculoskeletal, ENT",Face
+mouth ulcer,digestive,mouth,,"Digestive, Immune",Mouth
+skin growth,integumentary,skin,,Dermatologic,Skin
+eye deviation,nervous,brain,Broadly mapped to brain/cranial nerve control.,Ophthalmic,Eye
+diminished vision,nervous,eyes,Broadly mapped to eyes within the nervous/sensory system because ophthalmic is not an allowed system choice.,Ophthalmic,Eye
+double vision,nervous,eyes,Broadly mapped to eyes within the nervous/sensory system because ophthalmic is not an allowed system choice.,Ophthalmic,Eye
+cross-eyed,nervous,brain,Broadly mapped to brain/nerve control rather than the eye alone.,Ophthalmic,Eye
+symptoms of eye,nervous,eyes,Broadly mapped to eyes within the nervous/sensory system because ophthalmic is not an allowed system choice.,Ophthalmic,Eye
+pain in eye,nervous,eyes,Broadly mapped to eyes within the nervous/sensory system because ophthalmic is not an allowed system choice.,Ophthalmic,Eye
+eye moves abnormally,nervous,brain,Broadly mapped to brain/cranial nerve control.,Ophthalmic,Eye
+abnormal movement of eyelid,nervous,eyes,Broadly mapped to eyes within the nervous/sensory system because ophthalmic is not an allowed system choice.,Ophthalmic,Eye
+foreign body sensation in eye,nervous,eyes,Broadly mapped to eyes within the nervous/sensory system because ophthalmic is not an allowed system choice.,Ophthalmic,Eye
+irregular appearing scalp,integumentary,scalp,,ENT,Ear
+swollen lymph nodes,lymphatic,lymph nodes,,"Immune, Lymphatic",Neck
+back pain,musculoskeletal,back,,Musculoskeletal,Back
+neck pain,musculoskeletal,neck,,Musculoskeletal,Neck
+low back pain,musculoskeletal,back,,Musculoskeletal,Back
+pain of the anus,digestive,anus,,"Digestive, Dermatologic",Anus
+pain during pregnancy,reproductive,uterus,,Reproductive,Pelvis
+pelvic pain,reproductive,pelvis,Broadly mapped to pelvis rather than a single organ.,"Reproductive, Genitourinary, Musculoskeletal",Pelvis
+impotence,reproductive,penis,,"Reproductive, Cardiovascular, Neurological",Groin
+infant spitting up,digestive,esophagus,,Pediatric,Abdomen
+vomiting blood,digestive,stomach,,Gastrointestinal,Abdomen
+regurgitation,digestive,esophagus,,Digestive,Esophagus
+burning abdominal pain,digestive,stomach,,Gastrointestinal,Abdomen
+restlessness,nervous,brain,Broadly mapped to brain/central nervous system.,"Neurological, Psychological",Brain
+symptoms of infants,immune,whole body,Broadly mapped to whole body because the symptom is systemic or non-localized.,Pediatric,Whole Body
+wheezing,respiratory,lungs,,Respiratory,Lungs
+peripheral edema,circulatory,blood vessels,Broadly mapped to blood vessels/whole circulation.,Cardiovascular,Whole Body
+neck mass,musculoskeletal,neck,,Musculoskeletal,Neck
+ear pain,ent,ear,,ENT,Ear
+jaw swelling,ent,jaw,Broadly mapped to ENT/oral region.,"Musculoskeletal, Dental",Head
+mouth dryness,digestive,mouth,,"Digestive, Endocrine",Mouth
+neck swelling,musculoskeletal,neck,,Musculoskeletal,Neck
+knee pain,musculoskeletal,knee,,Musculoskeletal,Knee
+foot or toe pain,musculoskeletal,foot,,"Musculoskeletal, Neurological, Cardiovascular",Foot/Toe
+bowlegged or knock-kneed,musculoskeletal,bones,Broadly mapped to musculoskeletal region.,Musculoskeletal,Leg
+ankle pain,musculoskeletal,ankle,,Musculoskeletal,Ankle
+bones are painful,musculoskeletal,bones,Broadly mapped to musculoskeletal region.,Musculoskeletal,Whole Body
+knee weakness,musculoskeletal,knee,,Neurological,Knee
+elbow pain,musculoskeletal,elbow,,Musculoskeletal,Elbow
+knee swelling,musculoskeletal,knee,,Musculoskeletal,Knee
+skin moles,integumentary,skin,,Dermatologic,Skin
+knee lump or mass,musculoskeletal,knee,,Musculoskeletal,Knee
+weight gain,endocrine,thyroid,Broadly mapped to endocrine regulation.,"Endocrine, Metabolic",Whole Body
+problems with movement,nervous,brain,Broadly mapped from older neurological/psychological label.,Neurological,Whole Body
+knee stiffness or tightness,musculoskeletal,knee,,Musculoskeletal,Knee
+leg swelling,musculoskeletal,leg,,Musculoskeletal,Leg
+foot or toe swelling,musculoskeletal,foot,,"Cardiovascular, Renal, Musculoskeletal",Foot/Toe
+heartburn,digestive,esophagus,,ENT,Esophagus
+smoking problems,respiratory,lungs,Broadly mapped to lungs because the available system set has no behavioral category.,"Respiratory, Cardiovascular, Psychological",Chest
+muscle pain,musculoskeletal,muscles,Broadly mapped to musculoskeletal region.,Musculoskeletal,Whole Body
+infant feeding problem,immune,whole body,Broadly mapped to whole body because the symptom is systemic or non-localized.,Pediatric,Abdomen
+recent weight loss,endocrine,thyroid,Broadly mapped to endocrine regulation.,"Endocrine, Metabolic, Digestive",Whole Body
+problems with shape or size of breast,reproductive,breast,,Reproductive,Chest
+underweight,endocrine,thyroid,Broadly mapped to endocrine regulation.,"Endocrine, Metabolic, Digestive",Whole Body
+difficulty eating,digestive,mouth,Broadly mapped to mouth/oral intake.,"Digestive, Neurological, Dental",Head
+scanty menstrual flow,reproductive,uterus,,Reproductive,Pelvis
+vaginal pain,reproductive,vagina,,Reproductive,Vagina
+vaginal redness,reproductive,vagina,,Reproductive,Pelvis
+vulvar irritation,reproductive,vulva,,Reproductive,Groin
+weakness,musculoskeletal,muscles,Broadly mapped to musculoskeletal region.,Neurological,Whole Body
+decreased heart rate,circulatory,heart,,ENT,Ear
+increased heart rate,circulatory,heart,,ENT,Ear
+bleeding or discharge from nipple,reproductive,breast,,"Reproductive, Endocrine",Chest
+ringing in ear,ent,ear,,ENT,Ear
+plugged feeling in ear,ent,ear,,ENT,Ear
+itchy ear(s),ent,ear,,ENT,Ear
+frontal headache,nervous,brain,,Neurological,Head
+fluid in ear,ent,ear,,ENT,Ear
+neck stiffness or tightness,musculoskeletal,neck,,Musculoskeletal,Neck
+spots or clouds in vision,nervous,eyes,Broadly mapped to eyes within the nervous/sensory system because ophthalmic is not an allowed system choice.,Ophthalmic,Eye
+eye redness,nervous,eyes,Broadly mapped to eyes within the nervous/sensory system because ophthalmic is not an allowed system choice.,Ophthalmic,Eye
+lacrimation,nervous,eyes,Broadly mapped to eyes within the nervous/sensory system because ophthalmic is not an allowed system choice.,Ophthalmic,Eye
+itchiness of eye,nervous,eyes,Broadly mapped to eyes within the nervous/sensory system because ophthalmic is not an allowed system choice.,Ophthalmic,Eye
+blindness,nervous,eyes,Broadly mapped to eyes within the nervous/sensory system because ophthalmic is not an allowed system choice.,Ophthalmic,Eye
+eye burns or stings,nervous,eyes,Broadly mapped to eyes within the nervous/sensory system because ophthalmic is not an allowed system choice.,Ophthalmic,Eye
+itchy eyelid,nervous,eyes,Broadly mapped to eyes within the nervous/sensory system because ophthalmic is not an allowed system choice.,Ophthalmic,Eye
+feeling cold,endocrine,thyroid,Broadly mapped to thyroid/endocrine regulation.,"Endocrine, Neurological, Cardiovascular",Whole Body
+decreased appetite,digestive,stomach,Broadly mapped to stomach/digestive system.,"Digestive, Endocrine, Psychological",Abdomen
+excessive appetite,endocrine,pancreas,Broadly mapped to endocrine regulation.,"Endocrine, Psychological",Abdomen
+excessive anger,nervous,brain,Broadly mapped to brain because no psychological system image is available.,Psychological,Head
+loss of sensation,nervous,peripheral nerves,Broadly mapped to peripheral nerves rather than a single body part.,Neurological,Nervous System
+focal weakness,nervous,brain,Broadly mapped to brain/central nervous system.,Neurological,Whole Body
+slurring words,nervous,brain,,Neurological,Brain
+symptoms of the face,ent,face,Broadly mapped to ENT/oral region.,"Neurological, Musculoskeletal, Dermatologic",Face
+disturbance of memory,nervous,brain,,Psychological,Head
+paresthesia,nervous,peripheral nerves,,Neurological,Whole Body
+side pain,urinary,kidneys,Broadly mapped to kidneys/flank.,"Musculoskeletal, Renal, Digestive",Abdomen
+fever,immune,whole body,Broadly mapped to whole body because fever is systemic.,"Immune, Thermoregulatory",Whole Body
+shoulder pain,musculoskeletal,shoulder,,Musculoskeletal,Shoulder
+shoulder stiffness or tightness,musculoskeletal,shoulder,,Musculoskeletal,Shoulder
+shoulder weakness,musculoskeletal,shoulder,,Neurological,Shoulder
+arm cramps or spasms,musculoskeletal,arm,,Musculoskeletal,Arm
+shoulder swelling,musculoskeletal,shoulder,,Musculoskeletal,Shoulder
+tongue lesions,digestive,tongue,,"Digestive, Dermatologic",Tongue
+leg cramps or spasms,musculoskeletal,leg,,Musculoskeletal,Leg
+abnormal appearing tongue,digestive,tongue,,ENT,Ear
+ache all over,immune,whole body,Broadly mapped to whole body because the symptom is systemic or non-localized.,"Musculoskeletal, Immune",Whole Body
+lower body pain,musculoskeletal,muscles,Broadly mapped from older musculoskeletal label.,"Musculoskeletal, Neurological",Leg
+problems during pregnancy,reproductive,uterus,,Reproductive,Pelvis
+spotting or bleeding during pregnancy,reproductive,uterus,,Reproductive,Uterus
+cramps and spasms,musculoskeletal,muscles,Broadly mapped to musculoskeletal region.,Musculoskeletal,Whole Body
+upper abdominal pain,digestive,stomach,,Gastrointestinal,Abdomen
+stomach bloating,digestive,stomach,Broadly mapped to stomach/upper abdomen.,Gastrointestinal,Stomach
+changes in stool appearance,digestive,intestines,,ENT,Ear
+unusual color or odor to urine,urinary,bladder,,Urinary,Pelvis
+kidney mass,urinary,kidneys,,Urinary,Abdomen
+swollen abdomen,digestive,abdomen,,"Digestive, Reproductive, Renal",Abdomen
+symptoms of prostate,reproductive,prostate,,Reproductive,Pelvis
+leg stiffness or tightness,musculoskeletal,leg,,Musculoskeletal,Leg
+difficulty breathing,respiratory,lungs,,Respiratory,Chest
+rib pain,musculoskeletal,rib,,"Musculoskeletal, Respiratory",Chest
+joint pain,musculoskeletal,joints,Broadly mapped to musculoskeletal region.,Musculoskeletal,Whole Body
+muscle stiffness or tightness,musculoskeletal,muscles,Broadly mapped to musculoskeletal region.,Musculoskeletal,Whole Body
+pallor,circulatory,blood vessels,Broadly mapped to blood vessels/whole circulation.,"Hematologic, Cardiovascular",Skin
+hand or finger lump or mass,musculoskeletal,hand,,"Musculoskeletal, Dermatologic",Hand
+chills,immune,whole body,Broadly mapped to whole body because chills are systemic.,"Immune, Thermoregulatory",Whole Body
+groin pain,reproductive,pelvis,Broadly mapped from older reproductive label.,"Musculoskeletal, Reproductive",Groin
+fatigue,immune,whole body,Broadly mapped to whole body because the symptom is systemic or non-localized.,"Neurological, Musculoskeletal, Endocrine, Cardiovascular",Whole Body
+abdominal distention,digestive,abdomen,,Gastrointestinal,Abdomen
+regurgitation.1,digestive,esophagus,,Digestive,Abdomen
+symptoms of the kidneys,urinary,kidneys,,Urinary,Abdomen
+melena,digestive,intestines,,Gastrointestinal,Abdomen
+flushing,endocrine,thyroid,Broadly mapped to endocrine regulation.,"Dermatologic, Endocrine, Cardiovascular",Skin
+coughing up sputum,respiratory,lungs,,Respiratory,Lungs
+seizures,nervous,brain,,Neurological,Head
+delusions or hallucinations,nervous,brain,Broadly mapped to brain because no psychological system image is available.,Psychological,Head
+shoulder cramps or spasms,musculoskeletal,shoulder,,Musculoskeletal,Shoulder
+joint stiffness or tightness,musculoskeletal,joints,Broadly mapped to musculoskeletal region.,Musculoskeletal,Whole Body
+pain or soreness of breast,reproductive,breast,,Reproductive,Chest
+excessive urination at night,urinary,bladder,,Urinary,Pelvis
+bleeding from eye,nervous,eyes,Broadly mapped to eyes within the nervous/sensory system because ophthalmic is not an allowed system choice.,Ophthalmic,Eye
+rectal bleeding,digestive,rectum,,Digestive,Rectum
+constipation,digestive,intestines,,Gastrointestinal,Intestines
+temper problems,nervous,brain,Broadly mapped to brain because no psychological system image is available.,Psychological,Brain
+coryza,respiratory,nose,,"Respiratory, Immune",Head
+wrist weakness,musculoskeletal,wrist,,Neurological,Wrist
+eye strain,nervous,eyes,Broadly mapped to eyes within the nervous/sensory system because ophthalmic is not an allowed system choice.,Ophthalmic,Eye
+hemoptysis,respiratory,lungs,,Respiratory,Chest
+lymphedema,lymphatic,lymph vessels,,Cardiovascular,Whole Body
+skin on leg or foot looks infected,integumentary,skin,,Dermatologic,Skin
+allergic reaction,immune,whole body,Broadly mapped to whole body because it is systemic.,Immune,Whole Body
+congestion in chest,respiratory,lungs,,"Respiratory, Cardiovascular",Lungs
+muscle swelling,musculoskeletal,muscles,Broadly mapped to musculoskeletal region.,Musculoskeletal,Whole Body
+pus in urine,urinary,bladder,,Urinary,Pelvis
+abnormal size or shape of ear,ent,ear,,ENT,Ear
+low back weakness,musculoskeletal,back,,Neurological,Back
+sleepiness,nervous,brain,Broadly mapped to brain/sleep regulation.,"Neurological, Psychological",Brain
+apnea,respiratory,airway,Broadly mapped to airway/lungs rather than a single precise structure.,Respiratory,Chest
+abnormal breathing sounds,respiratory,lungs,,Respiratory,Chest
+excessive growth,endocrine,pituitary,,Endocrine,Whole Body
+elbow cramps or spasms,musculoskeletal,elbow,,Musculoskeletal,Elbow
+feeling hot and cold,endocrine,thyroid,Broadly mapped to thyroid/endocrine regulation.,"Endocrine, Immune, Thermoregulatory",Whole Body
+blood clots during menstrual periods,reproductive,uterus,,Reproductive,Pelvis
+absence of menstruation,reproductive,uterus,,Reproductive,Pelvis
+pulling at ears,ent,ear,,ENT,Ear
+gum pain,digestive,gums,Broadly mapped to gums/oral cavity because dental is not an allowed system choice.,"Dental, Digestive",Gums
+redness in ear,ent,ear,,ENT,Ear
+fluid retention,circulatory,heart,Broadly mapped from older cardiovascular/hematologic label.,"Renal, Cardiovascular, Endocrine",Whole Body
+flu-like syndrome,immune,whole body,Broadly mapped to whole body because it is systemic.,"Immune, Respiratory",Whole Body
+sinus congestion,respiratory,sinuses,,ENT,Sinuses
+painful sinuses,respiratory,sinuses,,ENT,Head
+fears and phobias,nervous,brain,Broadly mapped to brain because no psychological system image is available.,ENT,Ear
+recent pregnancy,reproductive,uterus,,Reproductive,Pelvis
+uterine contractions,reproductive,uterus,,Reproductive,Uterus
+burning chest pain,circulatory,heart,Broadly mapped to heart/chest; could overlap with digestive causes.,Cardiovascular,Chest
+back cramps or spasms,musculoskeletal,back,,Musculoskeletal,Back
+stiffness all over,musculoskeletal,muscles,Broadly mapped to musculoskeletal region.,"Musculoskeletal, Neurological",Whole Body
+"muscle cramps, contractures, or spasms",musculoskeletal,muscles,Broadly mapped to musculoskeletal region.,Musculoskeletal,Whole Body
+low back cramps or spasms,musculoskeletal,back,,Musculoskeletal,Back
+back mass or lump,musculoskeletal,back,,Musculoskeletal,Back
+nosebleed,ent,nose,,ENT,Nose
+long menstrual periods,reproductive,uterus,,Reproductive,Pelvis
+heavy menstrual flow,reproductive,uterus,,Reproductive,Pelvis
+unpredictable menstruation,reproductive,uterus,,Reproductive,Pelvis
+painful menstruation,reproductive,uterus,,Reproductive,Pelvis
+infertility,reproductive,ovaries,Broadly mapped to ovaries/female reproductive system.,"Reproductive, Endocrine",Pelvis
+frequent menstruation,reproductive,uterus,,Reproductive,Pelvis
+sweating,endocrine,thyroid,Broadly mapped to endocrine regulation.,"Endocrine, Thermoregulatory",Skin
+mass on eyelid,nervous,eyes,Broadly mapped to eyes within the nervous/sensory system because ophthalmic is not an allowed system choice.,Ophthalmic,Eye
+swollen eye,nervous,eyes,Broadly mapped to eyes within the nervous/sensory system because ophthalmic is not an allowed system choice.,Ophthalmic,Eye
+eyelid swelling,nervous,eyes,Broadly mapped to eyes within the nervous/sensory system because ophthalmic is not an allowed system choice.,Ophthalmic,Eye
+eyelid lesion or rash,nervous,eyes,Broadly mapped to eyes within the nervous/sensory system because ophthalmic is not an allowed system choice.,Ophthalmic,Eye
+unwanted hair,endocrine,ovaries,Broadly mapped to endocrine regulation.,"Endocrine, Dermatologic",Skin
+symptoms of bladder,urinary,bladder,,Urinary,Pelvis
+irregular appearing nails,integumentary,nails,,ENT,Ear
+itching of skin,integumentary,skin,,Dermatologic,Skin
+hurts to breath,respiratory,lungs,Broadly mapped to lungs/chest rather than pleura/ribs specifically.,Respiratory,Chest
+nailbiting,integumentary,nails,,Dermatologic,Hand
+"skin dryness, peeling, scaliness, or roughness",integumentary,skin,,Dermatologic,Skin
+skin on arm or hand looks infected,integumentary,skin,,Dermatologic,Skin
+skin irritation,integumentary,skin,,Dermatologic,Skin
+itchy scalp,integumentary,scalp,,Dermatologic,Head
+hip swelling,musculoskeletal,hip,,Musculoskeletal,Hip
+incontinence of stool,digestive,rectum,,Gastrointestinal,Pelvis
+foot or toe cramps or spasms,musculoskeletal,foot,,Musculoskeletal,Foot
+warts,integumentary,skin,,Dermatologic,Skin
+bumps on penis,reproductive,penis,,Reproductive,Groin
+too little hair,endocrine,ovaries,Broadly mapped to endocrine regulation.,"Endocrine, Dermatologic",Skin
+foot or toe lump or mass,musculoskeletal,foot,,"Musculoskeletal, Dermatologic",Foot
+skin rash,integumentary,skin,,Dermatologic,Skin
+mass or swelling around the anus,digestive,anus,,"Digestive, Dermatologic",Anus
+low back swelling,musculoskeletal,back,,Musculoskeletal,Back
+ankle swelling,musculoskeletal,ankle,,Musculoskeletal,Ankle
+hip lump or mass,musculoskeletal,hip,,Musculoskeletal,Hip
+drainage in throat,respiratory,throat,,ENT,Throat
+dry or flaky scalp,integumentary,scalp,,Dermatologic,Head
+premenstrual tension or irritability,endocrine,ovaries,Broadly mapped to female endocrine regulation.,Reproductive,Head
+feeling hot,endocrine,thyroid,Broadly mapped to thyroid/endocrine regulation.,"Endocrine, Thermoregulatory",Whole Body
+feet turned in,musculoskeletal,muscles,Broadly mapped from older musculoskeletal label.,Musculoskeletal,Foot
+foot or toe stiffness or tightness,musculoskeletal,foot,,"Musculoskeletal, Neurological",Foot
+pelvic pressure,reproductive,pelvis,Broadly mapped to pelvis rather than a single organ.,"Reproductive, Genitourinary",Pelvis
+elbow swelling,musculoskeletal,elbow,,Musculoskeletal,Elbow
+elbow stiffness or tightness,musculoskeletal,elbow,,Musculoskeletal,Elbow
+early or late onset of menopause,endocrine,ovaries,,ENT,Ear
+mass on ear,ent,ear,,ENT,Ear
+bleeding from ear,ent,ear,,ENT,Ear
+hand or finger weakness,musculoskeletal,hand,,Neurological,Hand
+low self-esteem,nervous,brain,Broadly mapped to brain because no psychological system image is available.,Psychological,Head
+throat irritation,respiratory,throat,,ENT,Throat
+itching of the anus,digestive,anus,,"Dermatologic, Digestive",Anus
+swollen or red tonsils,ent,throat,,ENT,Neck
+irregular belly button,musculoskeletal,muscles,Broadly mapped from older musculoskeletal label.,"Dermatologic, Musculoskeletal",Abdomen
+swollen tongue,digestive,tongue,,"Digestive, Immune",Tongue
+lip sore,digestive,lips,,Dermatologic,Head
+vulvar sore,reproductive,vulva,,Reproductive,Groin
+hip stiffness or tightness,musculoskeletal,hip,,Musculoskeletal,Hip
+mouth pain,digestive,mouth,,"Digestive, Dental",Mouth
+arm weakness,musculoskeletal,arm,,Neurological,Arm
+leg lump or mass,musculoskeletal,leg,,Musculoskeletal,Leg
+disturbance of smell or taste,nervous,brain,Broadly mapped to brain because the image set does not show dedicated smell/taste organs.,ENT,Head
+discharge in stools,digestive,intestines,,Gastrointestinal,Abdomen
+penis pain,reproductive,penis,,Reproductive,Groin
+loss of sex drive,endocrine,testes,Broadly mapped to male endocrine/reproductive regulation.,"Endocrine, Psychological",Brain
+obsessions and compulsions,nervous,brain,Broadly mapped to brain because no psychological system image is available.,Psychological,Head
+antisocial behavior,nervous,brain,Broadly mapped to brain because no psychological system image is available.,Psychological,Head
+neck cramps or spasms,musculoskeletal,neck,,Musculoskeletal,Neck
+pupils unequal,nervous,brain,Broadly mapped to brain/cranial nerves.,Ophthalmic,Head
+poor circulation,circulatory,blood vessels,Broadly mapped to blood vessels/whole circulation.,Cardiovascular,Whole Body
+thirst,endocrine,pancreas,Broadly mapped to endocrine regulation/pancreas.,"Endocrine, Renal",Whole Body
+sleepwalking,nervous,brain,,"Neurological, Psychological",Brain
+skin oiliness,integumentary,skin,,Dermatologic,Skin
+sneezing,respiratory,nose,,"Respiratory, Immune",Nose
+bladder mass,urinary,bladder,,Urinary,Pelvis
+knee cramps or spasms,musculoskeletal,knee,,Musculoskeletal,Knee
+premature ejaculation,reproductive,penis,Broadly mapped to male reproductive tract.,Reproductive,Groin
+leg weakness,musculoskeletal,leg,,Neurological,Leg
+posture problems,musculoskeletal,bones,Broadly mapped to musculoskeletal region.,Musculoskeletal,Back
+bleeding in mouth,digestive,mouth,,"Digestive, Dental, Hematologic",Mouth
+tongue bleeding,digestive,tongue,,"Digestive, Dental",Tongue
+change in skin mole size or color,integumentary,skin,,Dermatologic,Skin
+penis redness,reproductive,penis,,Reproductive,Groin
+penile discharge,reproductive,penis,,"Reproductive, Genitourinary",Penis
+shoulder lump or mass,musculoskeletal,shoulder,,Musculoskeletal,Shoulder
+polyuria,endocrine,pancreas,Broadly mapped to endocrine regulation though it overlaps urinary causes.,Urinary,Pelvis
+cloudy eye,nervous,eyes,Broadly mapped to eyes within the nervous/sensory system because ophthalmic is not an allowed system choice.,Ophthalmic,Eye
+hysterical behavior,nervous,brain,Broadly mapped to brain because no psychological system image is available.,Psychological,Head
+arm lump or mass,musculoskeletal,arm,,Musculoskeletal,Arm
+nightmares,nervous,brain,,Psychological,Head
+bleeding gums,digestive,gums,Broadly mapped to gums/oral cavity because dental is not an allowed system choice.,"Dental, Hematologic",Gums
+pain in gums,digestive,gums,Broadly mapped to gums/oral cavity because dental is not an allowed system choice.,Dental,Head
+bedwetting,urinary,bladder,,Urinary,Pelvis
+diaper rash,integumentary,skin,,Dermatologic,Skin
+lump or mass of breast,reproductive,breast,,Reproductive,Chest
+vaginal bleeding after menopause,reproductive,uterus,,Reproductive,Pelvis
+infrequent menstruation,reproductive,uterus,,Reproductive,Pelvis
+mass on vulva,reproductive,vulva,,Reproductive,Groin
+jaw pain,ent,jaw,Broadly mapped to ENT/oral region.,"Musculoskeletal, Dental",Head
+itching of scrotum,reproductive,testes,Broadly mapped to scrotal/testicular region.,Reproductive,Groin
+postpartum problems of the breast,reproductive,breast,,Reproductive,Chest
+eyelid retracted,nervous,eyes,Broadly mapped to eyes within the nervous/sensory system because ophthalmic is not an allowed system choice.,Ophthalmic,Eye
+hesitancy,urinary,bladder,Broadly mapped to bladder/outflow.,"Urinary, Neurological",Pelvis
+elbow lump or mass,musculoskeletal,elbow,,Musculoskeletal,Elbow
+muscle weakness,musculoskeletal,muscles,Broadly mapped to musculoskeletal region.,Neurological,Whole Body
+throat redness,ent,throat,,ENT,Throat
+joint swelling,musculoskeletal,joints,Broadly mapped to musculoskeletal region.,Musculoskeletal,Whole Body
+tongue pain,digestive,tongue,,"Digestive, Neurological",Tongue
+redness in or around nose,ent,nose,,ENT,Nose
+wrinkles on skin,integumentary,skin,,Dermatologic,Skin
+foot or toe weakness,musculoskeletal,foot,,Neurological,Foot
+hand or finger cramps or spasms,musculoskeletal,hand,,Musculoskeletal,Hand
+back stiffness or tightness,musculoskeletal,back,,Musculoskeletal,Back
+wrist lump or mass,musculoskeletal,wrist,,Musculoskeletal,Wrist
+skin pain,integumentary,skin,,Dermatologic,Skin
+low back stiffness or tightness,musculoskeletal,back,,Musculoskeletal,Back
+low urine output,urinary,kidneys,Broadly mapped to kidneys.,Urinary,Pelvis
+skin on head or neck looks infected,integumentary,skin,,Dermatologic,Skin
+stuttering or stammering,nervous,brain,Broadly mapped to brain/speech control areas.,Neurological,Head
+problems with orgasm,reproductive,pelvis,Broadly mapped to reproductive organs because the symptom is functional.,Reproductive,Pelvis
+nose deformity,ent,nose,,ENT,Nose
+lump over jaw,ent,jaw,Broadly mapped to ENT/oral region.,"Musculoskeletal, Dental, Lymphatic",Head
+sore in nose,ent,nose,,ENT,Nose
+hip weakness,musculoskeletal,hip,,Neurological,Hip
+back swelling,musculoskeletal,back,,Musculoskeletal,Back
+ankle stiffness or tightness,musculoskeletal,ankle,,Musculoskeletal,Ankle
+ankle weakness,musculoskeletal,ankle,,Neurological,Ankle
+neck weakness,musculoskeletal,neck,,Neurological,Neck

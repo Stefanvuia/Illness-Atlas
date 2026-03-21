@@ -1,3 +1,378 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:02117bf1bd18e4eaef542b40c609cd691331c74069a7dddfc97807f4da291a6c
-size 14247
+symptom,bodily_system,effected_area
+anxiety and nervousness,Psychological,Head
+depression,Psychological,Head
+shortness of breath,Respiratory,Chest
+depressive or psychotic symptoms,Psychological,Head
+sharp chest pain,Cardiovascular,Chest
+dizziness,Neurological,Head
+insomnia,Psychological,Head
+abnormal involuntary movements,Neurological,Whole Body
+chest tightness,General/Systemic,Chest
+palpitations,Cardiovascular,Chest
+irregular heartbeat,Cardiovascular,Chest
+breathing fast,Respiratory,Chest
+hoarse voice,General/Systemic,Neck
+sore throat,ENT,Neck
+difficulty speaking,Neurological,Head
+cough,Respiratory,Chest
+nasal congestion,ENT,Head
+throat swelling,ENT,Neck
+diminished hearing,ENT,Head
+lump in throat,ENT,Neck
+throat feels tight,ENT,Neck
+difficulty in swallowing,General/Systemic,Neck
+skin swelling,Dermatologic,Skin
+retention of urine,Urinary,Pelvis
+groin mass,Reproductive,Groin
+leg pain,Musculoskeletal,Leg
+hip pain,Musculoskeletal,Hip
+suprapubic pain,General/Systemic,Abdomen
+blood in stool,Gastrointestinal,Abdomen
+lack of growth,General/Systemic,Whole Body
+emotional symptoms,General/Systemic,Head
+elbow weakness,Neurological,Arm
+back weakness,Neurological,Back
+pus in sputum,Respiratory,Chest
+symptoms of the scrotum and testes,Reproductive,Groin
+swelling of scrotum,Reproductive,Groin
+pain in testicles,Reproductive,Groin
+flatulence,Gastrointestinal,Abdomen
+pus draining from ear,ENT,Head
+jaundice,General/Systemic,Skin
+mass in scrotum,Reproductive,Groin
+white discharge from eye,Ophthalmic,Head
+irritable infant,General/Systemic,Whole Body
+abusing alcohol,General/Systemic,Whole Body
+fainting,Neurological,Whole Body
+hostile behavior,Psychological,Head
+drug abuse,General/Systemic,Whole Body
+sharp abdominal pain,Gastrointestinal,Abdomen
+feeling ill,General/Systemic,Whole Body
+vomiting,Gastrointestinal,Abdomen
+headache,Neurological,Head
+nausea,Gastrointestinal,Abdomen
+diarrhea,Gastrointestinal,Abdomen
+vaginal itching,Reproductive,Pelvis
+vaginal dryness,Reproductive,Pelvis
+painful urination,Urinary,Pelvis
+involuntary urination,Urinary,Pelvis
+pain during intercourse,General/Systemic,Pelvis
+frequent urination,Urinary,Pelvis
+lower abdominal pain,Gastrointestinal,Abdomen
+vaginal discharge,Reproductive,Pelvis
+blood in urine,Urinary,Pelvis
+hot flashes,General/Systemic,Whole Body
+intermenstrual bleeding,Reproductive,Pelvis
+hand or finger pain,General/Systemic,Hand
+wrist pain,Musculoskeletal,Wrist
+hand or finger swelling,General/Systemic,Hand
+arm pain,Musculoskeletal,Arm
+wrist swelling,Musculoskeletal,Wrist
+arm stiffness or tightness,Musculoskeletal,Arm
+arm swelling,Musculoskeletal,Arm
+hand or finger stiffness or tightness,General/Systemic,Hand
+wrist stiffness or tightness,Musculoskeletal,Wrist
+lip swelling,General/Systemic,Head
+toothache,General/Systemic,Head
+abnormal appearing skin,ENT,Skin
+skin lesion,Dermatologic,Skin
+acne or pimples,Dermatologic,Skin
+dry lips,General/Systemic,Head
+facial pain,General/Systemic,Head
+mouth ulcer,General/Systemic,Head
+skin growth,Dermatologic,Skin
+eye deviation,Ophthalmic,Head
+diminished vision,Ophthalmic,Head
+double vision,Ophthalmic,Head
+cross-eyed,Ophthalmic,Head
+symptoms of eye,Ophthalmic,Head
+pain in eye,Ophthalmic,Head
+eye moves abnormally,Ophthalmic,Head
+abnormal movement of eyelid,Ophthalmic,Head
+foreign body sensation in eye,Ophthalmic,Head
+irregular appearing scalp,ENT,Head
+swollen lymph nodes,General/Systemic,Neck
+back pain,Musculoskeletal,Back
+neck pain,Musculoskeletal,Neck
+low back pain,Musculoskeletal,Back
+pain of the anus,General/Systemic,Pelvis
+pain during pregnancy,Reproductive,Pelvis
+pelvic pain,General/Systemic,Pelvis
+impotence,General/Systemic,Groin
+infant spitting up,General/Systemic,Abdomen
+vomiting blood,Gastrointestinal,Abdomen
+regurgitation,General/Systemic,Abdomen
+burning abdominal pain,Gastrointestinal,Abdomen
+restlessness,General/Systemic,Whole Body
+symptoms of infants,General/Systemic,Whole Body
+wheezing,Respiratory,Chest
+peripheral edema,Cardiovascular,Whole Body
+neck mass,Musculoskeletal,Neck
+ear pain,ENT,Head
+jaw swelling,General/Systemic,Head
+mouth dryness,General/Systemic,Head
+neck swelling,Musculoskeletal,Neck
+knee pain,Musculoskeletal,Knee
+foot or toe pain,General/Systemic,Foot
+bowlegged or knock-kneed,Musculoskeletal,Leg
+ankle pain,Musculoskeletal,Ankle
+bones are painful,Musculoskeletal,Whole Body
+knee weakness,Neurological,Knee
+elbow pain,Musculoskeletal,Elbow
+knee swelling,Musculoskeletal,Knee
+skin moles,Dermatologic,Skin
+knee lump or mass,Musculoskeletal,Knee
+weight gain,General/Systemic,Whole Body
+problems with movement,Neurological,Whole Body
+knee stiffness or tightness,Musculoskeletal,Knee
+leg swelling,Musculoskeletal,Leg
+foot or toe swelling,General/Systemic,Foot
+heartburn,ENT,Chest
+smoking problems,General/Systemic,Chest
+muscle pain,Musculoskeletal,Whole Body
+infant feeding problem,General/Systemic,Abdomen
+recent weight loss,General/Systemic,Whole Body
+problems with shape or size of breast,Reproductive,Chest
+underweight,General/Systemic,Whole Body
+difficulty eating,General/Systemic,Head
+scanty menstrual flow,Reproductive,Pelvis
+vaginal pain,Reproductive,Pelvis
+vaginal redness,Reproductive,Pelvis
+vulvar irritation,Reproductive,Groin
+weakness,Neurological,Whole Body
+decreased heart rate,ENT,Chest
+increased heart rate,ENT,Chest
+bleeding or discharge from nipple,General/Systemic,Chest
+ringing in ear,ENT,Head
+plugged feeling in ear,ENT,Head
+itchy ear(s),ENT,Head
+frontal headache,Neurological,Head
+fluid in ear,ENT,Head
+neck stiffness or tightness,Musculoskeletal,Neck
+spots or clouds in vision,Ophthalmic,Head
+eye redness,Ophthalmic,Head
+lacrimation,Ophthalmic,Head
+itchiness of eye,Ophthalmic,Head
+blindness,Ophthalmic,Head
+eye burns or stings,Ophthalmic,Head
+itchy eyelid,Ophthalmic,Head
+feeling cold,General/Systemic,Whole Body
+decreased appetite,General/Systemic,Abdomen
+excessive appetite,General/Systemic,Abdomen
+excessive anger,Psychological,Head
+loss of sensation,General/Systemic,Whole Body
+focal weakness,Neurological,Whole Body
+slurring words,General/Systemic,Head
+symptoms of the face,General/Systemic,Head
+disturbance of memory,Psychological,Head
+paresthesia,Neurological,Whole Body
+side pain,General/Systemic,Abdomen
+fever,General/Systemic,Whole Body
+shoulder pain,Musculoskeletal,Shoulder
+shoulder stiffness or tightness,Musculoskeletal,Shoulder
+shoulder weakness,Neurological,Shoulder
+arm cramps or spasms,Musculoskeletal,Arm
+shoulder swelling,Musculoskeletal,Shoulder
+tongue lesions,General/Systemic,Head
+leg cramps or spasms,Musculoskeletal,Leg
+abnormal appearing tongue,ENT,Head
+ache all over,General/Systemic,Whole Body
+lower body pain,General/Systemic,Leg
+problems during pregnancy,Reproductive,Pelvis
+spotting or bleeding during pregnancy,Reproductive,Pelvis
+cramps and spasms,Musculoskeletal,Whole Body
+upper abdominal pain,Gastrointestinal,Abdomen
+stomach bloating,Gastrointestinal,Abdomen
+changes in stool appearance,ENT,Abdomen
+unusual color or odor to urine,Urinary,Pelvis
+kidney mass,Urinary,Abdomen
+swollen abdomen,General/Systemic,Abdomen
+symptoms of prostate,Reproductive,Pelvis
+leg stiffness or tightness,Musculoskeletal,Leg
+difficulty breathing,Respiratory,Chest
+rib pain,General/Systemic,Chest
+joint pain,Musculoskeletal,Whole Body
+muscle stiffness or tightness,Musculoskeletal,Whole Body
+pallor,General/Systemic,Skin
+hand or finger lump or mass,General/Systemic,Hand
+chills,General/Systemic,Whole Body
+groin pain,General/Systemic,Groin
+fatigue,General/Systemic,Whole Body
+abdominal distention,Gastrointestinal,Abdomen
+regurgitation.1,General/Systemic,Abdomen
+symptoms of the kidneys,Urinary,Abdomen
+melena,Gastrointestinal,Abdomen
+flushing,General/Systemic,Skin
+coughing up sputum,Respiratory,Chest
+seizures,Neurological,Head
+delusions or hallucinations,Psychological,Head
+shoulder cramps or spasms,Musculoskeletal,Shoulder
+joint stiffness or tightness,Musculoskeletal,Whole Body
+pain or soreness of breast,Reproductive,Chest
+excessive urination at night,Urinary,Pelvis
+bleeding from eye,Ophthalmic,Head
+rectal bleeding,General/Systemic,Pelvis
+constipation,Gastrointestinal,Abdomen
+temper problems,General/Systemic,Head
+coryza,General/Systemic,Head
+wrist weakness,Neurological,Wrist
+eye strain,Ophthalmic,Head
+hemoptysis,Respiratory,Chest
+lymphedema,Cardiovascular,Whole Body
+skin on leg or foot looks infected,Dermatologic,Skin
+allergic reaction,General/Systemic,Whole Body
+congestion in chest,General/Systemic,Chest
+muscle swelling,Musculoskeletal,Whole Body
+pus in urine,Urinary,Pelvis
+abnormal size or shape of ear,ENT,Head
+low back weakness,Neurological,Back
+sleepiness,General/Systemic,Head
+apnea,Respiratory,Chest
+abnormal breathing sounds,Respiratory,Chest
+excessive growth,General/Systemic,Whole Body
+elbow cramps or spasms,Musculoskeletal,Elbow
+feeling hot and cold,General/Systemic,Whole Body
+blood clots during menstrual periods,Reproductive,Pelvis
+absence of menstruation,Reproductive,Pelvis
+pulling at ears,ENT,Head
+gum pain,General/Systemic,Head
+redness in ear,ENT,Head
+fluid retention,General/Systemic,Whole Body
+flu-like syndrome,General/Systemic,Whole Body
+sinus congestion,ENT,Head
+painful sinuses,ENT,Head
+fears and phobias,ENT,Head
+recent pregnancy,Reproductive,Pelvis
+uterine contractions,General/Systemic,Pelvis
+burning chest pain,Cardiovascular,Chest
+back cramps or spasms,Musculoskeletal,Back
+stiffness all over,General/Systemic,Whole Body
+"muscle cramps, contractures, or spasms",Musculoskeletal,Whole Body
+low back cramps or spasms,Musculoskeletal,Back
+back mass or lump,Musculoskeletal,Back
+nosebleed,ENT,Head
+long menstrual periods,Reproductive,Pelvis
+heavy menstrual flow,Reproductive,Pelvis
+unpredictable menstruation,Reproductive,Pelvis
+painful menstruation,Reproductive,Pelvis
+infertility,General/Systemic,Pelvis
+frequent menstruation,Reproductive,Pelvis
+sweating,General/Systemic,Skin
+mass on eyelid,Ophthalmic,Head
+swollen eye,Ophthalmic,Head
+eyelid swelling,Ophthalmic,Head
+eyelid lesion or rash,Ophthalmic,Head
+unwanted hair,General/Systemic,Skin
+symptoms of bladder,Urinary,Pelvis
+irregular appearing nails,ENT,Hand
+itching of skin,Dermatologic,Skin
+hurts to breath,Respiratory,Chest
+nailbiting,Dermatologic,Hand
+"skin dryness, peeling, scaliness, or roughness",Dermatologic,Skin
+skin on arm or hand looks infected,Dermatologic,Skin
+skin irritation,Dermatologic,Skin
+itchy scalp,Dermatologic,Head
+hip swelling,Musculoskeletal,Hip
+incontinence of stool,Gastrointestinal,Pelvis
+foot or toe cramps or spasms,Musculoskeletal,Foot
+warts,Dermatologic,Skin
+bumps on penis,Reproductive,Groin
+too little hair,General/Systemic,Skin
+foot or toe lump or mass,General/Systemic,Foot
+skin rash,Dermatologic,Skin
+mass or swelling around the anus,General/Systemic,Pelvis
+low back swelling,Musculoskeletal,Back
+ankle swelling,Musculoskeletal,Ankle
+hip lump or mass,Musculoskeletal,Hip
+drainage in throat,ENT,Neck
+dry or flaky scalp,Dermatologic,Head
+premenstrual tension or irritability,Reproductive,Head
+feeling hot,General/Systemic,Whole Body
+feet turned in,General/Systemic,Foot
+foot or toe stiffness or tightness,General/Systemic,Foot
+pelvic pressure,General/Systemic,Pelvis
+elbow swelling,Musculoskeletal,Elbow
+elbow stiffness or tightness,Musculoskeletal,Elbow
+early or late onset of menopause,ENT,Pelvis
+mass on ear,ENT,Head
+bleeding from ear,ENT,Head
+hand or finger weakness,Neurological,Hand
+low self-esteem,Psychological,Head
+throat irritation,ENT,Neck
+itching of the anus,General/Systemic,Pelvis
+swollen or red tonsils,ENT,Neck
+irregular belly button,General/Systemic,Abdomen
+swollen tongue,General/Systemic,Head
+lip sore,Dermatologic,Head
+vulvar sore,Reproductive,Groin
+hip stiffness or tightness,Musculoskeletal,Hip
+mouth pain,General/Systemic,Head
+arm weakness,Neurological,Arm
+leg lump or mass,Musculoskeletal,Leg
+disturbance of smell or taste,ENT,Head
+discharge in stools,Gastrointestinal,Abdomen
+penis pain,Reproductive,Groin
+loss of sex drive,General/Systemic,Head
+obsessions and compulsions,Psychological,Head
+antisocial behavior,Psychological,Head
+neck cramps or spasms,Musculoskeletal,Neck
+pupils unequal,Ophthalmic,Head
+poor circulation,Cardiovascular,Whole Body
+thirst,General/Systemic,Whole Body
+sleepwalking,General/Systemic,Head
+skin oiliness,Dermatologic,Skin
+sneezing,General/Systemic,Head
+bladder mass,Urinary,Pelvis
+knee cramps or spasms,Musculoskeletal,Knee
+premature ejaculation,Reproductive,Groin
+leg weakness,Neurological,Leg
+posture problems,Musculoskeletal,Back
+bleeding in mouth,General/Systemic,Head
+tongue bleeding,General/Systemic,Head
+change in skin mole size or color,Dermatologic,Skin
+penis redness,Reproductive,Groin
+penile discharge,General/Systemic,Groin
+shoulder lump or mass,Musculoskeletal,Shoulder
+polyuria,Urinary,Pelvis
+cloudy eye,Ophthalmic,Head
+hysterical behavior,Psychological,Head
+arm lump or mass,Musculoskeletal,Arm
+nightmares,Psychological,Head
+bleeding gums,General/Systemic,Head
+pain in gums,General/Systemic,Head
+bedwetting,Urinary,Pelvis
+diaper rash,Dermatologic,Skin
+lump or mass of breast,Reproductive,Chest
+vaginal bleeding after menopause,Reproductive,Pelvis
+infrequent menstruation,Reproductive,Pelvis
+mass on vulva,Reproductive,Groin
+jaw pain,General/Systemic,Head
+itching of scrotum,Reproductive,Groin
+postpartum problems of the breast,Reproductive,Chest
+eyelid retracted,Ophthalmic,Head
+hesitancy,General/Systemic,Pelvis
+elbow lump or mass,Musculoskeletal,Elbow
+muscle weakness,Neurological,Whole Body
+throat redness,ENT,Neck
+joint swelling,Musculoskeletal,Whole Body
+tongue pain,General/Systemic,Head
+redness in or around nose,ENT,Head
+wrinkles on skin,Dermatologic,Skin
+foot or toe weakness,Neurological,Foot
+hand or finger cramps or spasms,Musculoskeletal,Hand
+back stiffness or tightness,Musculoskeletal,Back
+wrist lump or mass,Musculoskeletal,Wrist
+skin pain,Dermatologic,Skin
+low back stiffness or tightness,Musculoskeletal,Back
+low urine output,Urinary,Pelvis
+skin on head or neck looks infected,Dermatologic,Skin
+stuttering or stammering,Neurological,Head
+problems with orgasm,Reproductive,Pelvis
+nose deformity,ENT,Head
+lump over jaw,General/Systemic,Head
+sore in nose,ENT,Head
+hip weakness,Neurological,Hip
+back swelling,Musculoskeletal,Back
+ankle stiffness or tightness,Musculoskeletal,Ankle
+ankle weakness,Neurological,Ankle
+neck weakness,Neurological,Neck
