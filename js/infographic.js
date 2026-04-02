@@ -85,9 +85,10 @@ function initInfographic() {
     renderPrevalence(meta);
     renderTreatment(meta);
 
-    // Word cloud of symptoms
+    // Systems affected chart
     const diseaseRow = AppState.diseaseData.find(d => d.disease === diseaseName);
     if (!diseaseRow) return;
+    renderSystemsChart(diseaseRow);
 
     const symptoms = AppState.symptomList
       .filter(s => diseaseRow[s] > 0)
@@ -222,5 +223,48 @@ function initInfographic() {
       : '';
 
     el.innerHTML = `<div class="tx-tags">${pills}</div>${summary}`;
+  }
+
+  // ── Systems Affected chart ────────────────────────────────────────────────
+  function renderSystemsChart(diseaseRow) {
+    const el = document.getElementById('systems-chart');
+    if (!el) return;
+
+    // Count symptoms per body system
+    const counts = {};
+    AppState.symptomList.forEach(s => {
+      if (diseaseRow[s] <= 0) return;
+      const meta = AppState.symptomMeta.find(m => m.symptom === s.replace(/_/g, ' '));
+      if (!meta || !meta.bodily_system) return;
+      meta.bodily_system.split(',').forEach(sys => {
+        const key = sys.trim();
+        if (!key) return;
+        counts[key] = (counts[key] || 0) + 1;
+      });
+    });
+
+    const data = Object.entries(counts)
+      .map(([system, count]) => ({ system, count, color: systemColors[system] || '#8b949e' }))
+      .sort((a, b) => b.count - a.count);
+
+    if (data.length === 0) {
+      el.innerHTML = '<p class="placeholder-text">No data available.</p>';
+      return;
+    }
+
+    const maxCount = data[0].count;
+
+    // Capitalize system name for display
+    const label = s => s.charAt(0).toUpperCase() + s.slice(1);
+
+    el.innerHTML = data.map(d => `
+      <div class="sys-row">
+        <span class="sys-label" style="color:${d.color}">${label(d.system)}</span>
+        <div class="sys-bar-track">
+          <div class="sys-bar" style="width:${(d.count / maxCount) * 100}%;background:${d.color}"></div>
+        </div>
+        <span class="sys-count">${d.count}</span>
+      </div>
+    `).join('');
   }
 }

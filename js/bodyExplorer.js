@@ -98,6 +98,14 @@ function initBodyExplorer() {
 
   function renderDots() {
     dotsEl.innerHTML = '';
+    const single = relevantSystems.length <= 1;
+    prevBtn.disabled = single;
+    nextBtn.disabled = single;
+    prevBtn.style.opacity = single ? '0.25' : '';
+    nextBtn.style.opacity = single ? '0.25' : '';
+    prevBtn.style.pointerEvents = single ? 'none' : '';
+    nextBtn.style.pointerEvents = single ? 'none' : '';
+
     relevantSystems.forEach((sys, i) => {
       const dot = document.createElement('div');
       dot.className = 'system-dot' + (i === currentIndex ? ' active' : '');
@@ -232,7 +240,69 @@ function initBodyExplorer() {
       );
   }
 
+  function clearConnector() {
+    connD3.selectAll('.connector-line').remove();
+  }
+
+  // Create a connector SVG that spans the entire viewport grid
+  const viewportEl = document.getElementById('explorer-viewport');
+  const connSvg = document.createElementNS('http://www.w3.org/2000/svg', 'svg');
+  connSvg.id = 'connector-svg';
+  connSvg.style.cssText = 'position:absolute;top:0;left:0;width:100%;height:100%;pointer-events:none;z-index:5;';
+  viewportEl.style.position = 'relative';
+  viewportEl.appendChild(connSvg);
+  const connD3 = d3.select(connSvg);
+
+  function drawConnector(tag, areaText, color) {
+    clearConnector();
+    if (!currentOverlayRoot) return;
+
+    // Find all highlighted organ regions (set by highlightAreas which runs first)
+    const activeRegions = currentOverlayRoot.querySelectorAll('.active-organ');
+    if (activeRegions.length === 0) return;
+
+    const vpRect = viewportEl.getBoundingClientRect();
+    const tagRect = tag.getBoundingClientRect();
+
+    const vw = vpRect.width, vh = vpRect.height;
+    connD3.attr('viewBox', `0 0 ${vw} ${vh}`);
+
+    // Tag left-center relative to viewport
+    const tx = tagRect.left - vpRect.left;
+    const ty = tagRect.top + tagRect.height / 2 - vpRect.top;
+
+    activeRegions.forEach(region => {
+      // If the region is a <g> with multiple shape children, point to each separately
+      const shapes = region.querySelectorAll('path, ellipse, circle, rect, polygon, polyline');
+      const targets = shapes.length > 1 ? Array.from(shapes) : [region];
+
+      targets.forEach(el => {
+        const rRect = el.getBoundingClientRect();
+        if (rRect.width === 0 && rRect.height === 0) return;
+        const rx = rRect.left + rRect.width / 2 - vpRect.left;
+        const ry = rRect.top + rRect.height / 2 - vpRect.top;
+
+        connD3.append('line')
+          .attr('class', 'connector-line')
+          .attr('x1', rx).attr('y1', ry)
+          .attr('x2', tx).attr('y2', ty)
+          .attr('stroke', color).attr('stroke-width', 2)
+          .attr('stroke-opacity', 0.7)
+          .attr('stroke-dasharray', '4,3')
+          .attr('pointer-events', 'none');
+
+        connD3.append('circle')
+          .attr('class', 'connector-line')
+          .attr('cx', rx).attr('cy', ry).attr('r', 5)
+          .attr('fill', color).attr('fill-opacity', 0.6)
+          .attr('stroke', color).attr('stroke-width', 1.5)
+          .attr('pointer-events', 'none');
+      });
+    });
+  }
+
   function clearHighlights() {
+    clearConnector();
     if (!currentOverlayRoot) return;
 
     currentOverlayRoot.querySelectorAll('.organ-region').forEach(el => {
@@ -323,13 +393,20 @@ function initBodyExplorer() {
       tag.appendChild(name);
       tag.appendChild(value);
 
-      tag.addEventListener('mouseenter', () => highlightAreas(item.area, color));
-      tag.addEventListener('focusin', () => highlightAreas(item.area, color));
+      tag.addEventListener('mouseenter', () => {
+        highlightAreas(item.area, color);
+        drawConnector(tag, item.area, color);
+      });
+      tag.addEventListener('focusin', () => {
+        highlightAreas(item.area, color);
+        drawConnector(tag, item.area, color);
+      });
       tag.addEventListener('mouseleave', clearHighlights);
       tag.addEventListener('focusout', clearHighlights);
 
       tag.addEventListener('click', () => {
         highlightAreas(item.area, color);
+        drawConnector(tag, item.area, color);
       });
 
       annotationsEl.appendChild(tag);

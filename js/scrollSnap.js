@@ -2,11 +2,38 @@ document.addEventListener("DOMContentLoaded", () => {
     let currentIndex = 0;
     let isScrolling = false;
     let lockTimer = null;
+    const nav = document.getElementById("section-nav");
 
     function getSections() {
         return Array.from(document.querySelectorAll(".snap-panel"))
             .filter(s => !s.classList.contains("hidden") &&
                          getComputedStyle(s).display !== "none");
+    }
+
+    // Rebuild nav dots to match currently visible sections
+    let prevCount = 0;
+    function rebuildNav() {
+        const sections = getSections();
+        if (sections.length === prevCount) return;
+        prevCount = sections.length;
+        nav.innerHTML = "";
+        sections.forEach((s, i) => {
+            const a = document.createElement("a");
+            a.href = "#" + (s.id || "");
+            a.addEventListener("click", (e) => {
+                e.preventDefault();
+                scrollToSection(i);
+            });
+            nav.appendChild(a);
+        });
+        highlightNav();
+    }
+
+    function highlightNav() {
+        const dots = nav.querySelectorAll("a");
+        dots.forEach((a, i) => {
+            a.classList.toggle("active", i === currentIndex);
+        });
     }
 
     function updateCurrentSection() {
@@ -26,6 +53,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
         isScrolling = true;
         currentIndex = index;
+        highlightNav();
 
         sections[index].scrollIntoView({ behavior: "smooth", block: "start" });
 
@@ -33,7 +61,6 @@ document.addEventListener("DOMContentLoaded", () => {
             history.replaceState(null, null, window.location.pathname);
         }, 400);
 
-        // Release lock once scroll settles — use scrollend if available, else timeout
         clearTimeout(lockTimer);
         if ("onscrollend" in window) {
             const onEnd = () => {
@@ -42,7 +69,6 @@ document.addEventListener("DOMContentLoaded", () => {
                 clearTimeout(lockTimer);
             };
             window.addEventListener("scrollend", onEnd, { once: true });
-            // Safety fallback in case scrollend never fires
             lockTimer = setTimeout(() => {
                 isScrolling = false;
                 window.removeEventListener("scrollend", onEnd);
@@ -75,10 +101,25 @@ document.addEventListener("DOMContentLoaded", () => {
         scrollToSection(currentIndex + direction);
     }, { passive: false });
 
-    // Reset accumulator when wheel goes quiet (gesture ended)
     let resetTimer = null;
     window.addEventListener("wheel", () => {
         clearTimeout(resetTimer);
         resetTimer = setTimeout(() => { accumulated = 0; }, 150);
     }, { passive: true });
+
+    // Observe class changes on snap-panels to detect hidden/shown transitions
+    const observer = new MutationObserver(() => rebuildNav());
+    document.querySelectorAll(".snap-panel").forEach(el => {
+        observer.observe(el, { attributes: true, attributeFilter: ["class"] });
+    });
+
+    // Also update nav highlight on scroll
+    window.addEventListener("scroll", () => {
+        if (!isScrolling) {
+            updateCurrentSection();
+            highlightNav();
+        }
+    }, { passive: true });
+
+    rebuildNav();
 });

@@ -11,28 +11,24 @@
 <body>
   <!-- HEADER -->
   <header id="hero" class="snap-panel">
-    <nav class="section-nav">
-      <a href="#hero"></a>
-      <a href="#explore"></a>
-      <a href="#related-diseases"></a>
-      <a href="#body-explorer"></a>
-      <a href="#infographic"></a>
-    </nav>
+    <nav class="section-nav" id="section-nav"></nav>
     <div class="panel-inner">
       <h1>Illness Atlas</h1>
       <p class="subtitle">Explore the connections between symptoms, diseases, and body systems</p>
-      <p class="intro">
-        Start by selecting symptoms you're curious about and watch diseases reorganize 
-        based on how closely they match.
-      </p>
-      <p class="intro">
-        Each bubble represents a disease, and its size reflects how relevant it is to 
-        the symptoms you've chosen.
-      </p>
-      <p class="intro">
-        Click a disease to explore deeper — compare related conditions, visualize the 
-        body systems it affects, and learn more about its symptoms and medical context.
-      </p>
+      <div class="hero-steps">
+        <div class="hero-step">
+          <span class="step-num">1</span>
+          <span>Select symptoms and watch diseases reorganize by relevance</span>
+        </div>
+        <div class="hero-step">
+          <span class="step-num">2</span>
+          <span>Click a bubble to explore a disease in depth</span>
+        </div>
+        <div class="hero-step">
+          <span class="step-num">3</span>
+          <span>Compare related conditions, body systems, and symptom profiles</span>
+        </div>
+      </div>
     </div>
   </header>
 
@@ -92,51 +88,7 @@
     </div>
   </section>
 
-  <!-- SECTION 2: Related Diseases -->
-  <section id="related-diseases" class="section snap-panel hidden">
-    <div class="panel-inner related-panel-inner">
-      <h2>Related Diseases</h2>
-      <p class="section-desc">Diseases that share symptoms can be misdiagnosed or co-occur — understanding their similarity helps clinicians distinguish between conditions and identify comorbidity risks. Each spike represents a related disease: <strong>length</strong> encodes symptom overlap (Jaccard similarity), <strong>width</strong> encodes how much of <span id="related-disease-name" class="disease-highlight"></span>'s symptoms are shared, and <strong>dots</strong> show the count of shared symptoms.</p>
-      <div id="related-diseases-card" class="ribbon-card">
-        <div class="ribbon-header">
-          <h3>Related Diseases</h3>
-          <div class="ribbon-slider-wrap">
-            <label for="related-n-slider">Show top</label>
-            <input id="related-n-slider" type="range" min="3" max="10" value="5" step="1">
-            <span id="related-n-label">5</span>
-            <button class="ribbon-back-btn" id="related-back-btn-el" style="display:none">← Back to chart</button>
-          </div>
-        </div>
-        <div id="related-ribbon-container">
-          <svg id="related-ribbon-svg"></svg>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- SECTION 3: Body System Explorer -->
-  <section id="body-explorer" class="section snap-panel hidden">
-    <div class="panel-inner">
-      <h2>Body Systems Affected</h2>
-      <p class="section-desc">Navigate through body systems to see which areas are impacted by <span id="explorer-disease-name" class="disease-highlight"></span>.</p>
-      <div class="explorer-layout">
-        <button id="prev-system" class="nav-btn">&larr;</button>
-        <div id="explorer-viewport">
-          <div id="system-label"></div>
-          <div id="explorer-canvas">
-            <img id="system-image" src="" alt="">
-            <svg id="explorer-svg"></svg>
-          </div>
-          <div id="symptom-annotations"></div>
-        </div>
-        <button id="next-system" class="nav-btn">&rarr;</button>
-      </div>
-      <div id="system-dots"></div>
-      </div>
-    </div>
-  </section>      
-
-  <!-- SECTION 4: Disease Infographic -->
+  <!-- SECTION 2: Disease Profile -->
   <section id="infographic" class="section snap-panel free-scroll hidden">
     <div class="panel-inner">
       <h2>Disease Profile</h2>
@@ -146,7 +98,6 @@
           <div id="disease-info">
             <h3 id="info-disease-name"></h3>
             <p id="info-description"></p>
-            <a id="info-link" href="#" target="_blank">Read more on Wikipedia &rarr;</a>
           </div>
 
           <div id="wordcloud-container">
@@ -168,11 +119,61 @@
             <h4>Treatment</h4>
             <div id="treatment-content"><p class="placeholder-text">Select a disease above.</p></div>
           </div>
+          <div id="systems-card" class="info-extra-card">
+            <h4>Systems Affected</h4>
+            <div id="systems-chart"></div>
+          </div>
         </div>
       </div>
 
     </div>
   </section>
+
+  <!-- SECTION 3: Related Diseases -->
+  <section id="related-diseases" class="section snap-panel hidden">
+    <div class="panel-inner related-panel-inner">
+      <h2>Related Diseases</h2>
+      <p class="section-desc">Diseases that share symptoms can be misdiagnosed or co-occur — understanding their similarity helps clinicians distinguish between conditions and identify comorbidity risks. Each spike represents a related disease: <strong>length</strong> encodes symptom overlap (Jaccard similarity), <strong>width</strong> encodes how much of <span id="related-disease-name" class="disease-highlight"></span>'s symptoms are shared, and <strong>dots</strong> show the count of shared symptoms.</p>
+      <div id="related-diseases-card" class="ribbon-card">
+        <div class="ribbon-header">
+          <h3>Related Diseases</h3>
+          <div class="ribbon-slider-wrap">
+            <label for="related-n-slider">Show top</label>
+            <input id="related-n-slider" type="range" min="3" max="10" value="5" step="1">
+            <span id="related-n-label">5</span>
+            <button class="ribbon-back-btn" id="related-back-btn-el" style="display:none">← Back to chart</button>
+          </div>
+        </div>
+        <div id="related-ribbon-container">
+          <svg id="related-ribbon-svg"></svg>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- SECTION 4: Body System Explorer -->
+  <section id="body-explorer" class="section snap-panel hidden">
+    <div class="panel-inner">
+      <h2>Body Systems Affected</h2>
+      <p class="section-desc">Navigate through body systems to see which areas are impacted by <span id="explorer-disease-name" class="disease-highlight"></span>.</p>
+      <div class="explorer-layout">
+        <button id="prev-system" class="nav-btn">&larr;</button>
+        <div id="explorer-viewport">
+          <div id="system-label"></div>
+          <div id="explorer-canvas">
+            <img id="system-image" src="" alt="">
+            <svg id="explorer-svg"></svg>
+          </div>
+          <div id="symptom-annotations"></div>
+        </div>
+        <button id="next-system" class="nav-btn">&rarr;</button>
+      </div>
+      <div id="system-dots"></div>
+      <a id="info-link" href="#" target="_blank" class="wiki-outlink">Read more on Wikipedia &rarr;</a>
+      </div>
+    </div>
+  </section>
+
 
   <button id="back-to-explore-btn" class="floating-back-btn" type="button">
     ↑ Back to Symptom Explorer

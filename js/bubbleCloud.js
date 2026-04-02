@@ -289,6 +289,7 @@ function initBubbleCloudPanel(panel, mode) {
       d3.select(event.target).attr('stroke', '#f0883e').attr('stroke-width', 3);
       playRipple(d.x, d.y, d.r, '#f0883e');
 
+      showScrollCue(d.disease);
     });
 
   let labels = labelGroup.selectAll('text').data([]).join('text');
@@ -307,6 +308,23 @@ function initBubbleCloudPanel(panel, mode) {
     ripple.transition().duration(750)
       .attr('r', r + 40).attr('opacity', 0)
       .on('end', () => ripple.remove());
+  }
+
+  function showScrollCue(disease) {
+    // Remove any existing cue
+    container.querySelector('.scroll-cue')?.remove();
+
+    const name = disease.charAt(0).toUpperCase() + disease.slice(1);
+    const cue = document.createElement('div');
+    cue.className = 'scroll-cue';
+    cue.innerHTML = `Scroll to explore <strong>${name}</strong> ↓`;
+    container.appendChild(cue);
+
+    // Auto-dismiss after 4s
+    setTimeout(() => {
+      cue.classList.add('fade-out');
+      cue.addEventListener('animationend', () => cue.remove());
+    }, 4000);
   }
 
   // Order symptoms so that co-occurring ones sit angularly adjacent on the ring,

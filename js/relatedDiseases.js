@@ -435,8 +435,8 @@ function initRelatedDiseases() {
     const cx    = svgW / 2, cy = svgH / 2;
     const halfW = Math.min(cx * 0.36, 125);
 
-    const labelA = currentDisease.length > 20 ? currentDisease.slice(0, 18) + '…' : currentDisease;
-    const labelB = item.relName.length   > 20 ? item.relName.slice(0, 18)   + '…' : item.relName;
+    const labelA = currentDisease.length > 28 ? currentDisease.slice(0, 26) + '…' : currentDisease;
+    const labelB = item.relName.length   > 28 ? item.relName.slice(0, 26)   + '…' : item.relName;
 
     radarG = svg.append('g')
       .attr('transform', `translate(${cx * 1.52},${cy})`)
@@ -506,12 +506,19 @@ function initRelatedDiseases() {
       const secH = d3.sum(scaledH.slice(idxOffset, idxOffset + items.length))
                  + GAP * (items.length - 1);
 
-      // Section label at right margin
-      radarG.append('text')
+      // Section label at right margin — wrap long labels
+      const secLabel = radarG.append('text')
         .attr('x', halfW + 6).attr('y', yOffset + secH / 2)
         .attr('dominant-baseline', 'middle').attr('class', 'ribbon-label')
-        .attr('fill', color).attr('font-size', '8px').attr('font-style', 'italic')
-        .text(label);
+        .attr('fill', color).attr('font-size', '8px').attr('font-style', 'italic');
+      const secWords = label.split(' ');
+      if (label.length > 16) {
+        const mid = Math.ceil(secWords.length / 2);
+        secLabel.append('tspan').attr('x', halfW + 6).attr('dy', '-0.5em').text(secWords.slice(0, mid).join(' '));
+        secLabel.append('tspan').attr('x', halfW + 6).attr('dy', '1.1em').text(secWords.slice(mid).join(' '));
+      } else {
+        secLabel.text(label);
+      }
 
       // Dashed divider after each section except the last
       if (si < sections.filter(s => s.items.length > 0).length - 1) {
@@ -545,7 +552,7 @@ function initRelatedDiseases() {
       }
 
       // Symptom label: right-aligned outside all bars (left edge of chart)
-      const lbl = d.name.length > 18 ? d.name.slice(0, 17) + '…' : d.name;
+      const lbl = d.name.length > 24 ? d.name.slice(0, 22) + '…' : d.name;
       radarG.append('text')
         .attr('x', -halfW - 6).attr('y', yPos + sh / 2)
         .attr('text-anchor', 'end').attr('dominant-baseline', 'middle')
@@ -572,9 +579,8 @@ function initRelatedDiseases() {
         AppState.selectedDisease = item.relName;
         AppState.onDiseaseSelect.forEach(fn => fn(item.relName));
       });
-    // Truncate to ~11 chars so "Explore [name] →" always fits at 11px
-    const btnLabel = item.relName.length > 11 ? item.relName.slice(0, 10) + '…' : item.relName;
-    const btnW = Math.min(halfW * 1.6, 160);
+    const btnLabel = item.relName.length > 18 ? item.relName.slice(0, 16) + '…' : item.relName;
+    const btnW = Math.min(halfW * 2, 200);
     navG.append('rect')
       .attr('x', 0).attr('y', -13).attr('width', btnW).attr('height', 26)
       .attr('rx', 5)
