@@ -156,7 +156,7 @@ function initBodyExplorer() {
     overlayHost.innerHTML = '';
     currentOverlayRoot = null;
 
-    const svgPath = `Images/Overlays/${system}.svg`;
+    const svgPath = `Images/Overlays/${system.toLowerCase()}.svg`;
 
     try {
       const res = await fetch(svgPath);
