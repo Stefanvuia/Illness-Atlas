@@ -23,7 +23,7 @@ Features:
 
 ^ Size = relevance based on selected symptoms
 
-^ Supports:
+- Supports:
 	- Exploratory Mode → discover patterns
 	- Diagnostic Mode → narrow down diseases
 
@@ -53,11 +53,11 @@ Tech stack:
 
 Team:
 
-Stefan Vuia
-Kimlan Huynh
-Hamza Rana
-Harshith Latchupatula
-Chihana Kashiwabara
+- Stefan Vuia
+- Kimlan Huynh
+- Hamza Rana
+- Harshith Latchupatula
+- Chihana Kashiwabara
 
 Warning:
 
