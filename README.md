@@ -7,6 +7,7 @@ Built as part of CSC316, this project aims to make complex medical data more int
 Demo Video:
 
 Project Overview:
+
 Medical information is often difficult to interpret due to overlapping symptoms across diseases.
 This project addresses that by providing an interactive visual storytelling experience that helps users:
 - Explore how diseases are connected through shared symptoms
@@ -34,11 +35,13 @@ Features:
 	- Additional context
 
 Data Sources:
+
 Kaggle Disease-Symptom Dataset
 
 Tech stack:
 
 Team:
+
 Stefan Vuia
 Kimlan Huynh
 Hamza Rana
@@ -46,4 +49,5 @@ Harshith Latchupatula
 Chihana Kashiwabara
 
 Warning:
+
 This tool is for educational exploration only and is not a medical diagnostic instrument. Its purpose is to illustrate how difficult it is to narrow down diseases from symptoms alone — do not use it for self-diagnosis.
