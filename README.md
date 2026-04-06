@@ -25,18 +25,14 @@ Features:
 	- Diagnostic Mode → narrow down diseases
 
 2. Body Systems View
-
-^ Maps diseases to body systems
-
-^ Highlights affected areas interactively
+- Maps diseases to body systems
+- Highlights affected areas interactively
 
 3. Related Diseases View
-
-^ Shows connections between diseases based on symptom overlap
+- Shows connections between diseases based on symptom overlap
 
 4. Disease Profile
-
-^ Displays:
+- Displays:
 	- Description
 	- Prevalence
 	- Symptoms
