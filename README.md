@@ -15,7 +15,6 @@ This project addresses that by providing an interactive visual storytelling expe
 - Learn how adding symptoms reduces diagnostic uncertainty
 - View how diseases relate to different body systems
 
-
 Features:
 
 1. Bubble Cloud Visualization
