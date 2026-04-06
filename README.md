@@ -19,10 +19,8 @@ Features:
 
 1. Bubble Cloud Visualization
 
-^ Displays diseases as bubbles
-
-^ Size = relevance based on selected symptoms
-
+- Displays diseases as bubbles
+- Size = relevance based on selected symptoms
 - Supports:
 	- Exploratory Mode → discover patterns
 	- Diagnostic Mode → narrow down diseases
