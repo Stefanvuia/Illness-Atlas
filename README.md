@@ -16,18 +16,29 @@ This project addresses that by providing an interactive visual storytelling expe
 - View how diseases relate to different body systems
 
 Features:
+
 1. Bubble Cloud Visualization
+
 ^ Displays diseases as bubbles
+
 ^ Size = relevance based on selected symptoms
+
 ^ Supports:
 	- Exploratory Mode → discover patterns
 	- Diagnostic Mode → narrow down diseases
+
 2. Body Systems View
+
 ^ Maps diseases to body systems
+
 ^ Highlights affected areas interactively
+
 3. Related Diseases View
+
 ^ Shows connections between diseases based on symptom overlap
+
 4. Disease Profile
+
 ^ Displays:
 	- Description
 	- Prevalence
