@@ -18,7 +18,6 @@ This project addresses that by providing an interactive visual storytelling expe
 Features:
 
 1. Bubble Cloud Visualization
-
 - Displays diseases as bubbles
 - Size = relevance based on selected symptoms
 - Supports:
