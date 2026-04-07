@@ -8,8 +8,8 @@ Built as part of CSC316, this project aims to make complex medical data more int
 
 ## Links
 
-- **Project Website:** [\[TODO: add URL\]](https://youtu.be/w3i-wkSD9Sc)
-- **Screencast / Demo Video:** [TODO: add URL]https://stefanvuia.github.io/Illness-Atlas/
+- **Project Website:** https://youtu.be/w3i-wkSD9Sc
+- **Screencast / Demo Video:** https://stefanvuia.github.io/Illness-Atlas/
 
 ---
 
