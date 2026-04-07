@@ -10,6 +10,7 @@ Built as part of CSC316, this project aims to make complex medical data more int
 
 - **Project Website:** https://stefanvuia.github.io/Illness-Atlas/
 - **Screencast / Demo Video:** https://youtu.be/w3i-wkSD9Sc
+- **Process Book:** https://docs.google.com/document/d/1BVxq87dTQihdQ1iKbb_Rr7Wuhd-ojdR79xvBV3k3q5A/edit?usp=sharing
 
 ---
 
@@ -77,7 +78,7 @@ This project addresses that by providing an interactive visual storytelling expe
 
 | Source | Description |
 |---|---|
-| [Kaggle Disease-Symptom Dataset](https://www.kaggle.com/) | Raw disease–symptom association data (`Diseases_and_Symptoms.csv`, `Disease_Symptom_Averages.csv`) |
+| [Kaggle Disease-Symptom Dataset](https://www.kaggle.com/datasets/itachi9604/disease-symptom-description-dataset) | Raw disease–symptom association data (`Diseases_and_Symptoms.csv`, `Disease_Symptom_Averages.csv`). **Note:** `Diseases_and_Symptoms.csv` (182 MB) is excluded from the zip — download from the Kaggle link. |
 | Wikipedia (via `wikipedia-api`) | Disease descriptions, scraped programmatically |
 | Google Gemini API | Metadata augmentation for risk factors, prevalence, and treatments |
 
