@@ -4,9 +4,9 @@ An interactive data visualization platform that helps users explore relationship
 
 Built as part of CSC316, this project aims to make complex medical data more intuitive and accessible for a general audience.
 
-Demo Video: [https://youtu.be/w3i-wkSD9Sc](url)
+Demo Video: https://youtu.be/w3i-wkSD9Sc
 
-Project Website: [https://stefanvuia.github.io/Illness-Atlas/](url)
+Project Website: https://stefanvuia.github.io/Illness-Atlas/
 
 Project Overview:
 
