@@ -6,6 +6,8 @@ Built as part of CSC316, this project aims to make complex medical data more int
 
 Demo Video: [https://youtu.be/w3i-wkSD9Sc](url)
 
+Project Website: [https://stefanvuia.github.io/Illness-Atlas/](url)
+
 Project Overview:
 
 Medical information is often difficult to interpret due to overlapping symptoms across diseases.
