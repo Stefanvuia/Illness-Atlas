@@ -1,6 +1,6 @@
 # Illness Atlas
 
-An interactive data visualization platform that helps users explore relationships between diseases and symptoms, with a focus on overlap, uncertainty, and global impact.
+An interactive data visualization platform that helps users explore relationships between diseases and symptoms, with a focus on overlap and uncertainty.
 
 Built as part of CSC316, this project aims to make complex medical data more intuitive and accessible for a general audience.
 
@@ -8,8 +8,8 @@ Built as part of CSC316, this project aims to make complex medical data more int
 
 ## Links
 
-- **Project Website:** https://youtu.be/w3i-wkSD9Sc
-- **Screencast / Demo Video:** https://stefanvuia.github.io/Illness-Atlas/
+- **Project Website:** https://stefanvuia.github.io/Illness-Atlas/
+- **Screencast / Demo Video:** https://youtu.be/w3i-wkSD9Sc
 
 ---
 
@@ -49,8 +49,6 @@ This project addresses that by providing an interactive visual storytelling expe
 ## What We Built vs. What Are Libraries
 
 ### Our Code (`js/`, `css/`, `Data/`)
-
-All application logic, visualizations, and data pipelines were written by the team:
 
 | File | Description |
 |---|---|
